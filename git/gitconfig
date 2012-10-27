@@ -1,0 +1,7 @@
+[user]
+	name = Tasuku SUENAGA a.k.a. gunyarakun
+	email = tasuku-s-github@titech.ac
+[color]
+	ui = auto
+[core]
+	editor = vim

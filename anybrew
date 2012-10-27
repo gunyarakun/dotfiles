@@ -1,0 +1,50 @@
+#!/bin/zsh
+# vim: set expandtab ts=2 sw=2 nowrap ft=sh ff=unix : */
+set -e -u
+
+uname=`uname`
+case $uname in
+  Darwin)
+    fetch="curl -L"
+    ;;
+  Linux)
+    fetch="wget -q -O -"
+    ;;
+  FreeBSD)
+    fetch="fetch -o -"
+    ;;
+esac
+
+# python
+# NOTE: pythonbrew is no longer maintained.
+#       but pythonz forked from python brew is not enough for my use.
+if [ ! -d ~/.pythonbrew ]; then
+  $fetch http://xrl.us/pythonbrewinstall | bash
+  echo '[[ -s "${HOME}/.pythonbrew/etc/bashrc" ]] && source $HOME/.pythonbrew/etc/bashrc' >> ~/.zshrc
+fi
+
+# ruby
+if [ ! -d ~/.rvm ]; then
+  $fetch http://get.rvm.io/ | bash -s stable
+  echo '[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm' >> ~/.zshrc
+fi
+
+# perl
+if [ ! -d ~/.perlbrew ]; then
+  $fetch http://install.perlbrew.pl/ | PERLBREW_ROOT=~/.perlbrew bash
+  echo "export PERLBREW_ROOT=~/.perlbrew" >> ~/.zshrc
+  echo '[[ -s "${HOME}/.perlbrew/etc/bashrc" ]] && source $HOME/.perlbrew/etc/bashrc' >> ~/.zshrc
+fi
+
+# Node.js
+if [ ! -d ~/.nvm ]; then
+  git clone git://github.com/creationix/nvm.git ~/.nvm
+  echo '[[ -s "${HOME}/.nvm/nvm.sh" ]] && source $HOME/.nvm/nvm.sh' >> ~/.zshrc
+fi
+
+cat <<INSTRUCTION
+Reload ~/.zshrc and execute anybrew-install
+
+  $ source ~/.zshrc
+  $ ./anybrew-install
+INSTRUCTION

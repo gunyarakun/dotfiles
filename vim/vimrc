@@ -1,0 +1,126 @@
+set nocompatible
+filetype off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc()
+endif
+
+" NeoBundle
+NeoBundle 'Shougo/neobundle.vim'
+
+" Auto close
+NeoBundle 'AutoClose'
+" relative move with "'k"
+NeoBundle 'Lokaltog/vim-easymotion'
+" show & delete trailing space
+NeoBundle 'csexton/trailertrash.vim'
+" git
+NeoBundle 'tpope/vim-fugitive'
+" rails
+NeoBundle 'tpope/vim-rails'
+" perl
+NeoBundle 'petdance/vim-perl'
+" javascript
+NeoBundle 'pangloss/vim-javascript'
+" scala
+NeoBundle 'derekwyatt/vim-scala'
+" php
+NeoBundle 'shawncplus/php.vim'
+" complete
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+" quick run with <Leader>r
+NeoBundle 'thinca/vim-quickrun'
+" show errormarker
+NeoBundle 'errormarker.vim'
+" toggle comment with ',,'
+NeoBundle 'scrooloose/nerdcommenter'
+" Show vimshell as window
+NeoBundle 'Shougo/vimshell'
+" Edit surrounded texts
+NeoBundle 'surround.vim'
+
+" after Bundle
+filetype plugin indent on
+syntax enable
+
+" color
+set t_Co=256
+colorscheme gunya
+
+" encoding
+set enc=utf-8
+set fenc=utf-8
+set fencs=utf-8,euc-jp,cp932
+set fileformats=unix,dos
+
+" tab
+set expandtab
+set smartindent
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set smarttab
+
+" scroll
+set scroll=11
+
+" find
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+
+" status line
+set laststatus=2
+
+" show
+set showcmd
+set showmode
+set showmatch
+
+" misc
+set ambiwidth=double
+set number
+set ruler
+set ttyfast
+set list
+set listchars=tab:▸\ ,eol:¬
+set wildmode=list:longest,full
+
+" bell
+set visualbell
+
+" modeline
+set modeline
+set modelines=5
+
+" neocomplcache
+" tab completion
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" don't cache japanese
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+" TODO: check
+imap <expr><C-k> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<C-n>"
+smap <C-k> <Plug>(neosnippet_expand)
+
+let g:acp_enableAtStartup = 0 " disable AutoComplPop
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*' " ?
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_ctags_arguments_list = {
+  \ 'perl' : '-R -h ".pm"'
+  \ }
+let g:neosnippet#snippets_directory = $HOME . "/.vim/snippets"
+let g:neocomplcache_dictionary_filetype_lists = {
+  \ 'default' : '',
+  \ 'perl'    : $HOME . './vim/dict/perl.dict'
+  \ }

@@ -1,0 +1,51 @@
+#!/bin/sh
+# vim: set expandtab ts=2 sw=2 nowrap ft=sh ff=unix : */
+set -e -u
+
+cwd=$(dirname $0)
+base_dir=$(cd $cwd; pwd)
+uname=`uname`
+
+# install basic module
+case $uname in
+  Darwin)
+    # TODO: check whether Xcode is installed or not
+    ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)" || echo
+    brew install git zsh
+    defaults write com.googlecode.iterm2 NSScrollAnimationEnabled -bool NO
+    ;;
+  Linux)
+    if [ -f /etc/debian_version ]; then
+      sudo apt-get install aptitude
+      sudo aptitude install build-essentials git zsh
+    elif [ -f /etc/redhat-release ]; then
+      sudo yum update
+      sudo yum groupinstall "Development Tools"
+      sudo yum install git zsh
+    fi
+    ;;
+  FreeBSD)
+    echo "To be implemented"
+    exit 1
+    ;;
+esac
+
+# update submodules
+git submodule init
+git submodule update
+
+# vim
+ln -snf $base_dir/vim/vimrc ~/.vimrc
+ln -snf $base_dir/vim/vim ~/.vim
+vim +NeoBundleInstall +qall
+
+# zsh
+if [ ! -d ~/antigen ]; then
+  git clone https://github.com/zsh-users/antigen.git ~/antigen
+  echo "source ~/.zshrc.antigen" >> ~/.zshrc
+  echo "export EDITOR=vim" >> ~/.zshrc
+fi
+ln -snf $base_dir/zsh/zshrc.antigen ~/.zshrc.antigen
+
+# git
+ln -snf $base_dir/git/gitconfig ~/.gitconfig

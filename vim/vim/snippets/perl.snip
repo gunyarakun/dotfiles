@@ -1,0 +1,59 @@
+snippet u
+  #!/usr/bin/env perl
+  use 5.10.0;
+  use strict;
+  use warnings;
+
+snippet d
+  use Data::Dump qw(dump);
+  warn dump 
+
+snippet dd
+  use Data::Dumper;
+  local $Data::Dumper::Indent = 1;
+  local $Data::Dumper::Terse  = 1;
+  warn Dumper 
+
+snippet dds
+  use Data::Dump::Streamer qw(Dumper);
+  warn Dumper 
+
+snippet c
+  use Carp qw/croak/;
+
+snippet n
+  sub new {
+      my $class = shift;
+      my $args = ref $_[0] ? $_[0] : +{@_};
+
+      ${1:code}
+
+      bless $args, $class;
+  }
+
+snippet l
+  use Class::Accessor::Lite
+
+snippet ll
+  Clas::Accessor::Lite->mk_accessors(${1:accessors});
+
+snippet t
+  #!/usr/bin/env perl -w
+  use strict;
+  use Test::More;
+
+  subtest => sub {
+  };
+
+  done_testing;
+
+snippet s
+  my ($self) = @_;
+
+snippet ex
+  use parent qw(Exporter);
+  our @EXPORT_OK = qw();
+
+snippet file
+  use Path::Class qw(file);
+  my @lines = file(__FILE__)->dir->file('/path/to/file')->slurp;

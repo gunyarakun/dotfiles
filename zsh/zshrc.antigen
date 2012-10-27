@@ -1,0 +1,23 @@
+# vim: set expandtab ts=2 sw=2 nowrap ft=sh ff=unix : */
+source ~/antigen/antigen.zsh
+
+# load the oh-my-zsh's library
+antigen-lib
+
+# bundles from the default repo
+antigen-bundle git
+antigen-bundle autojump
+# antigen-bundle brew
+antigen-bundle gem
+antigen-bundle git-flow
+antigen-bundle heroku
+antigen-bundle pip
+
+# syntax highlighting
+antigen-bundle zsh-users/zsh-syntax-highlighting
+
+# theme
+antigen-theme robbyrussell
+
+# OK, let's go
+antigen-apply

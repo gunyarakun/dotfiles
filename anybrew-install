@@ -1,0 +1,27 @@
+#!/bin/zsh
+# vim: set expandtab ts=2 sw=2 nowrap ft=sh ff=unix : */
+set -e -u
+
+# python
+pythonbrew install 2.7.3
+pythonbrew switch 2.7.3
+pip install ipython # interactive shell
+pythonbrew venv create gunya
+pythonbrew venv use gunya
+
+# ruby
+rvm install 1.9.3
+rvm 1.9.3 do gem install pry # interactive shell
+rvm 1.9.3 do rvm gemset create gunya
+rvm use 1.9.3@gunya --default
+echo 'gem: --no-ri --no-rdoc' >> ~/.gemrc # no document
+
+# perl
+perlbrew install -j 8 --notest perl-5.10.1 || echo
+perlbrew switch perl-5.10.1
+# perlbrew install-cpanm
+
+# Node.js
+. ~/.nvm/nvm.sh
+nvm install 0.8.12
+nvm alias default v0.8.12
