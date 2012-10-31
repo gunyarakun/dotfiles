@@ -12,8 +12,12 @@ git submodule update
 # zsh
 if [ ! -d ~/antigen ]; then
   git clone https://github.com/zsh-users/antigen.git ~/antigen
-  echo "source ~/.zshrc.antigen" >> ~/.zshrc
-  echo "export EDITOR=vim" >> ~/.zshrc
+  cat <<EOF >> ~/.zshrc
+source ~/.zshrc.antigen"
+setopt no_cdable_vars
+alias cp='nocorrect cp'
+export EDITOR=vim
+EOF
 fi
 ln -snf $base_dir/zsh/zshrc.antigen ~/.zshrc.antigen
 
