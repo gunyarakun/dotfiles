@@ -40,6 +40,8 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'Shougo/vimshell'
 " Edit surrounded texts
 NeoBundle 'surround.vim'
+" Beautiful Powerline
+NeoBundle 'Lokaltog/vim-powerline'
 
 " after Bundle
 filetype plugin indent on
