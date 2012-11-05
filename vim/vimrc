@@ -36,9 +36,9 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'errormarker.vim'
 " toggle comment with ',,'
 NeoBundle 'scrooloose/nerdcommenter'
-" Show vimshell as window
+" show vimshell as window
 NeoBundle 'Shougo/vimshell'
-" Edit surrounded texts
+" edit surrounded texts
 NeoBundle 'surround.vim'
 
 " after Bundle
