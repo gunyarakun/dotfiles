@@ -92,6 +92,10 @@ set list
 set listchars=tab:▸\ ,eol:¬
 set wildmode=list:longest,full
 
+" backup
+set nobackup
+set swapfile
+
 " bell
 set visualbell
 
