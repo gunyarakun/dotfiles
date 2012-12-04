@@ -13,7 +13,7 @@ git submodule update
 if [ ! -d ~/antigen ]; then
   git clone https://github.com/zsh-users/antigen.git ~/antigen
   cat <<EOF >> ~/.zshrc
-source ~/.zshrc.antigen"
+source ~/.zshrc.antigen
 setopt no_cdable_vars
 alias cp='nocorrect cp'
 export EDITOR=vim
