@@ -1,7 +1,16 @@
 [user]
-	name = Tasuku SUENAGA a.k.a. gunyarakun
-	email = tasuku-s-github@titech.ac
-[color]
-	ui = auto
+  name = Tasuku SUENAGA a.k.a. gunyarakun
+  email = tasuku-s-github@titech.ac
+[include]
+  path = .gitconfig.local
 [core]
-	editor = /usr/bin/vim
+  pager = vimless
+  editor = vim
+[color]
+  ui = auto
+[push]
+  default = tracking
+[branch]
+  autosetuprebase = always
+[merge]
+  ff = false
