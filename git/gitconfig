@@ -4,7 +4,7 @@
 [include]
   path = .gitconfig.local
 [core]
-  pager = vimless
+  pager = less -R
   editor = vim
 [color]
   ui = auto
