@@ -27,6 +27,8 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'derekwyatt/vim-scala'
 " php
 NeoBundle 'shawncplus/php.vim'
+" jsx
+NeoBundle 'jsx/jsx.vim'
 " complete
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
