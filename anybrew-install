@@ -6,14 +6,15 @@ set -e -u
 pythonbrew install 2.7.3
 pythonbrew switch 2.7.3
 pip install ipython # interactive shell
-pythonbrew venv create gunya
+pythonbrew venv create gunya -p 2.7.3
 pythonbrew venv use gunya
 
 # ruby
+rvm autolibs enable
 rvm install 1.9.3
-rvm 1.9.3 do gem install pry # interactive shell
+# rvm 1.9.3 do gem install pry # interactive shell
 rvm 1.9.3 do rvm gemset create gunya
-rvm use 1.9.3@gunya --default
+rvm 1.9.3 use 1.9.3@gunya --default
 echo 'gem: --no-ri --no-rdoc' >> ~/.gemrc # no document
 
 # perl
