@@ -2,7 +2,7 @@
 source ~/antigen/antigen.zsh
 
 # load the oh-my-zsh's library
-antigen-lib
+antigen-use oh-my-zsh
 
 # bundles from the default repo
 antigen-bundle git
