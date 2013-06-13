@@ -22,19 +22,19 @@ esac
 # NOTE: pythonbrew is no longer maintained.
 #       but pythonz forked from python brew is not enough for my use.
 if [ ! -d ~/.pythonbrew ]; then
-  $fetch $fetch_flags http://xrl.us/pythonbrewinstall | bash
+  eval $fetch $fetch_flags http://xrl.us/pythonbrewinstall | bash
   echo '[[ -s "${HOME}/.pythonbrew/etc/bashrc" ]] && source $HOME/.pythonbrew/etc/bashrc' >> ~/.zshrc
 fi
 
 # ruby
 if [ ! -d ~/.rvm ]; then
-  $fetch $fetch_flags http://get.rvm.io/ | bash -s stable
+  eval $fetch $fetch_flags http://get.rvm.io/ | bash -s stable
   echo '[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm' >> ~/.zshrc
 fi
 
 # perl
 if [ ! -d ~/.perlbrew ]; then
-  $fetch $fetch_flags http://install.perlbrew.pl/ | PERLBREW_ROOT=~/.perlbrew bash
+  eval $fetch $fetch_flags http://install.perlbrew.pl/ | PERLBREW_ROOT=~/.perlbrew bash
   echo "export PERLBREW_ROOT=~/.perlbrew" >> ~/.zshrc
   echo '[[ -s "${HOME}/.perlbrew/etc/bashrc" ]] && source $HOME/.perlbrew/etc/bashrc' >> ~/.zshrc
 fi
