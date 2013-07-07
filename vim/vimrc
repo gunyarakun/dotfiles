@@ -42,6 +42,8 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'surround.vim'
 " Beautiful Powerline
 NeoBundle 'Lokaltog/vim-powerline'
+" JSX
+NeoBundle 'git://github.com/jsx/jsx.vim.git'
 
 " after Bundle
 filetype plugin indent on
@@ -285,3 +287,7 @@ let g:Powerline#Colorschemes#my#colorscheme = Pl#Colorscheme#Init([
   \ ])
 let g:Powerline_colorscheme='my'
 let g:Powerline_mode_n = 'NORMAL'
+
+" For Mac scroll
+nnoremap <PageDown> <C-F>
+nnoremap <PageUp> <C-B>
