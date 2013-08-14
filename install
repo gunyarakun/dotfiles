@@ -16,6 +16,8 @@ case $uname in
     if [ -f /etc/debian_version ]; then
       sudo apt-get install aptitude
       sudo aptitude install build-essentials git zsh
+      # For building python
+      sudo aptitude install libgdbm-dev libbz2-dev libreadline-dev libssl-dev libsqlite3-dev libxml2-dev libxslt1-dev
     elif [ -f /etc/redhat-release ]; then
       sudo yum update
       sudo yum groupinstall "Development Tools"
