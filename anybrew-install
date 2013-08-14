@@ -5,7 +5,7 @@ set -e -u
 # python
 pythonbrew install --configure "--with-zlib --with-bz2 --with-ssl
  --with-readline --with-ncurses --with-expat --with-sqlite3 --with-crypt
-  --with-md5 --with-sha" -n 2.7.5 3.3.2
+  --with-md5 --with-sha" -j 8 2.7.5
 pythonbrew switch 2.7.5
 pip install ipython # interactive shell
 #pythonbrew venv create gunya -p 2.7.5
