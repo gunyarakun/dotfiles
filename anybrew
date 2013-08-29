@@ -9,8 +9,9 @@ case $uname in
     fetch_flags="-L"
     ;;
   Linux)
-    fetch="wget"
-    fetch_flags="-q -O -"
+    sudo aptitude install curl # rvm uses curl
+    fetch="curl"
+    fetch_flags="-L"
     ;;
   FreeBSD)
     fetch="fetch"
