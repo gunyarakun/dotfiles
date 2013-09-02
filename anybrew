@@ -43,6 +43,8 @@ if [ ! -d ~/.rbenv ]; then
   git clone https://github.com/ianheggie/rbenv-binstubs.git ~/.rbenv/plugins/rbenv-binstubs
   # rbenv-gemset
   git clone git://github.com/jf/rbenv-gemset.git ~/.rbenv/plugins/rbenv-gemset
+  # rbenv-gem-rehash
+  git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
 fi
 
 # perl
