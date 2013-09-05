@@ -9,6 +9,8 @@ endif
 " NeoBundle
 NeoBundle 'Shougo/neobundle.vim'
 
+" EditorConfig
+NeoBundle 'editorconfig-vim'
 " Auto close
 NeoBundle 'AutoClose'
 " relative move with "'k"
