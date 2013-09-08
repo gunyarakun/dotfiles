@@ -19,6 +19,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'csexton/trailertrash.vim'
 " git
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv'
 " rails
 NeoBundle 'tpope/vim-rails'
 " perl
