@@ -17,6 +17,7 @@ NeoBundle 'AutoClose'
 NeoBundle 'Lokaltog/vim-easymotion'
 " show & delete trailing space
 NeoBundle 'csexton/trailertrash.vim'
+" autocmd myautocmd VimEnter,WinEnter * match Error /\s\+$/
 " git
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
