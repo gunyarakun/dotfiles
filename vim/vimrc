@@ -49,6 +49,12 @@ NeoBundle 'Lokaltog/vim-powerline'
 " JSX
 NeoBundle 'git://github.com/jsx/jsx.vim.git'
 
+" comment out with '\\'
+NeoBundle 'tpope/vim-commentary'
+" handle lines with same indent spaces as text object with 'ai'/'ii'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-textobj-indent'
+
 " after Bundle
 filetype plugin indent on
 syntax enable
