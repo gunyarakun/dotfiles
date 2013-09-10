@@ -1,0 +1,17 @@
+source ~/.zsh/zsh/zshrc.antigen
+source ~/.zsh/zsh/zshrc.ls-abbrev
+source ~/.zsh/zsh/zshrc.enter-ls-git-status
+
+setopt no_cdable_vars
+alias cp='nocorrect cp'
+export EDITOR=vim
+export PATH=~/bin:$PATH
+
+# OS
+case ${OSTYPE} in
+  darwin*)
+    ;;
+  linux*)
+    alias crontab='crontab -i'
+    ;;
+esac

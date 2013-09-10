@@ -9,14 +9,18 @@ endif
 " NeoBundle
 NeoBundle 'Shougo/neobundle.vim'
 
+" EditorConfig
+NeoBundle 'editorconfig-vim'
 " Auto close
 NeoBundle 'AutoClose'
 " relative move with "'k"
 NeoBundle 'Lokaltog/vim-easymotion'
 " show & delete trailing space
 NeoBundle 'csexton/trailertrash.vim'
+" autocmd myautocmd VimEnter,WinEnter * match Error /\s\+$/
 " git
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv'
 " rails
 NeoBundle 'tpope/vim-rails'
 " perl
@@ -44,6 +48,14 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'surround.vim'
 " Beautiful Powerline
 NeoBundle 'Lokaltog/vim-powerline'
+" JSX
+NeoBundle 'git://github.com/jsx/jsx.vim.git'
+
+" comment out with '\\'
+NeoBundle 'tpope/vim-commentary'
+" handle lines with same indent spaces as text object with 'ai'/'ii'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-textobj-indent'
 
 " after Bundle
 filetype plugin indent on
@@ -287,3 +299,7 @@ let g:Powerline#Colorschemes#my#colorscheme = Pl#Colorscheme#Init([
   \ ])
 let g:Powerline_colorscheme='my'
 let g:Powerline_mode_n = 'NORMAL'
+
+" For Mac scroll
+nnoremap <PageDown> <C-F>
+nnoremap <PageUp> <C-B>

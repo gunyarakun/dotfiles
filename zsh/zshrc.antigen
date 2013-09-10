@@ -1,8 +1,8 @@
 # vim: set expandtab ts=2 sw=2 nowrap ft=sh ff=unix : */
-source ~/antigen/antigen.zsh
+source ~/.zsh/antigen/antigen.zsh
 
 # load the oh-my-zsh's library
-antigen-lib
+antigen-use oh-my-zsh
 
 # bundles from the default repo
 antigen-bundle git

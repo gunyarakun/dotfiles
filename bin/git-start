@@ -1,0 +1,7 @@
+#!/bin/sh
+msg=${1:-"first commit"}
+
+git init
+tree_hash=$(git write-tree)
+commit_hash=$(echo -n "$msg" | git commit-tree $tree_hash)
+echo $commit_hash > .git/refs/heads/master
