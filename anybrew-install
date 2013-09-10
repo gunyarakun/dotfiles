@@ -3,8 +3,9 @@
 set -e -u
 
 # python
-pythonbrew install --configure "--with-zlib --with-bz2 --with-ssl
- --with-readline --with-ncurses --with-expat --with-sqlite3 --with-crypt
+pythonbrew update
+pythonbrew install --configure "--with-zlib --with-bz2 --with-ssl \
+ --with-readline --with-ncurses --with-expat --with-sqlite3 --with-crypt \
   --with-md5 --with-sha" -j 8 2.7.5
 pythonbrew switch 2.7.5
 pip install ipython # interactive shell
@@ -16,11 +17,11 @@ rbenv install 2.0.0-p247
 echo 'gem: --no-ri --no-rdoc' >> ~/.gemrc # no document
 
 # perl
-perlbrew install -j 8 --notest perl-5.10.1 || echo
-perlbrew switch perl-5.10.1
+perlbrew install -j 8 --notest perl-5.18.1 || echo
+perlbrew switch perl-5.18.1
 # perlbrew install-cpanm
 
 # Node.js
 . ~/.nvm/nvm.sh
-nvm install v0.10.12
-nvm alias default v0.10.12
+nvm install v0.10.18
+nvm alias default v0.10.18
