@@ -1,6 +1,7 @@
 source ~/.zsh/zsh/zshrc.antigen
 source ~/.zsh/zsh/zshrc.ls-abbrev
 source ~/.zsh/zsh/zshrc.enter-ls-git-status
+source ~/.zsh/zsh/zshrc.golang
 
 setopt no_cdable_vars
 alias cp='nocorrect cp'
