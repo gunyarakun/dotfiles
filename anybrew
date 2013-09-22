@@ -9,8 +9,9 @@ case $uname in
     fetch_flags="-L"
     ;;
   Linux)
-    fetch="wget"
-    fetch_flags="-q -O -"
+    sudo aptitude install curl # rvm uses curl
+    fetch="curl"
+    fetch_flags="-L"
     ;;
   FreeBSD)
     fetch="fetch"
@@ -28,8 +29,22 @@ fi
 
 # ruby
 if [ ! -d ~/.rvm ]; then
-  eval $fetch $fetch_flags http://get.rvm.io/ | bash -s stable
-  echo '[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm' >> ~/.zshrc
+  rvm implode
+fi
+
+if [ ! -d ~/.rbenv ]; then
+  git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  echo '[[ -s "${HOME}/.rbenv/bin/rbenv" ]] && export PATH="$HOME/.rbenv/bin:$PATH" && eval "$(rbenv init -)"' >> ~/.zshrc
+
+  mkdir -p ~/.rbenv/plugins
+
+  # rbenv-binstubs
+  git clone https://github.com/ianheggie/rbenv-binstubs.git ~/.rbenv/plugins/rbenv-binstubs
+  # rbenv-gemset
+  git clone git://github.com/jf/rbenv-gemset.git ~/.rbenv/plugins/rbenv-gemset
+  # rbenv-gem-rehash
+  git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
 fi
 
 # perl

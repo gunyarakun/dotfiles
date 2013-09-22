@@ -13,4 +13,4 @@
 [branch]
   autosetuprebase = always
 [merge]
-  ff = false
+#  ff = false

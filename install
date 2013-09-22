@@ -8,14 +8,27 @@ uname=`uname`
 case $uname in
   Darwin)
     # TODO: check whether Xcode is installed or not
-    ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+    if [ ! -d /usr/local/Cellar ]; then
+      ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+    fi
+    brew update
     brew install git zsh
+    brew install zlib openssl sqlite libxml2 libxslt
+    brew install gdbm readline
+    brew install bison libyaml ncurses
+    # prevent scroll animation in iTerm2
     defaults write com.googlecode.iterm2 NSScrollAnimationEnabled -bool NO
     ;;
   Linux)
     if [ -f /etc/debian_version ]; then
       sudo apt-get install aptitude
-      sudo aptitude install build-essentials git zsh
+      sudo aptitude install build-essentials git zsh curl
+      # For building some language
+      sudo aptitude install zlib1g-dev libssl-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev
+      # For building Python
+      sudo aptitude install libgdbm-dev libbz2-dev libreadline-dev
+      # For bulding Ruby
+      sudo aptitude install bison libreadline6-dev libyaml-dev libncurses5-dev
     elif [ -f /etc/redhat-release ]; then
       sudo yum update
       sudo yum groupinstall "Development Tools"
