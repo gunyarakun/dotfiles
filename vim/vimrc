@@ -33,6 +33,10 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'shawncplus/php.vim'
 " jsx
 NeoBundle 'jsx/jsx.vim'
+
+" highlight matchit
+NeoBundle "vimtaku/hl_matchit.vim"
+
 " complete
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
@@ -303,3 +307,9 @@ let g:Powerline_mode_n = 'NORMAL'
 " For Mac scroll
 nnoremap <PageDown> <C-F>
 nnoremap <PageUp> <C-B>
+
+" matchit/hi_matchit
+source $VIMRUNTIME/macros/matchit.vim
+let g:hl_matchit_enable_on_vim_startup = 1
+let g:hl_matchit_hl_groupname = 'Search'
+"let g:hl_matchit_allow_ft_regexp = 'html\|vim\|ruby\|sh'
