@@ -23,5 +23,5 @@ perlbrew switch perl-5.18.1
 
 # Node.js
 . ~/.nvm/nvm.sh
-nvm install v0.10.18
-nvm alias default v0.10.18
+nvm install v0.10.21
+nvm alias default v0.10.21

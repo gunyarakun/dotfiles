@@ -28,7 +28,7 @@ if [ ! -d ~/.pythonbrew ]; then
 fi
 
 # ruby
-if [ ! -d ~/.rvm ]; then
+if [ -d ~/.rvm ]; then
   rvm implode
 fi
 
