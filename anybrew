@@ -7,24 +7,35 @@ case $uname in
   Darwin)
     fetch="curl"
     fetch_flags="-L"
+    brew install python3
     ;;
   Linux)
-    sudo aptitude install curl # rvm uses curl
+    sudo aptitude install curl python3 # rvm uses curl
     fetch="curl"
     fetch_flags="-L"
     ;;
   FreeBSD)
+    # TODO: Install python3
     fetch="fetch"
     fetch_flags="-o -"
     ;;
 esac
 
 # python
-# NOTE: pythonbrew is no longer maintained.
-#       but pythonz forked from python brew is not enough for my use.
-if [ ! -d ~/.pythonbrew ]; then
-  eval $fetch $fetch_flags http://xrl.us/pythonbrewinstall | bash
-  echo '[[ -s "${HOME}/.pythonbrew/etc/bashrc" ]] && source $HOME/.pythonbrew/etc/bashrc' >> ~/.zshrc
+if [ ! -d ~/.pyvenv ]; then
+  mkdir ~/.pyvenv
+  cd ~/.pyvenv; pyvenv-3.3 py3
+  echo 'PATH=$HOME/.pyvenv/py3/bin:$PATH' >> ~/.zshrc
+
+  PATH=$HOME/.pyvenv/py3/bin:$PATH
+  rehash
+  curl -L http://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py | python
+  rehash
+  easy_install pip
+  pip install ipython virtualenvwrapper
+
+  echo 'WORKON_HOME=$HOME/.pyvenv/' >> ~/.zshrc
+  echo '. $HOME/.pyvenv/py3/bin/virtualenvwrapper.sh' >> ~/.zshrc
 fi
 
 # ruby

@@ -2,16 +2,6 @@
 # vim: set expandtab ts=2 sw=2 nowrap ft=sh ff=unix : */
 set -e -u
 
-# python
-pythonbrew update
-pythonbrew install --configure "--with-zlib --with-bz2 --with-ssl \
- --with-readline --with-ncurses --with-expat --with-sqlite3 --with-crypt \
-  --with-md5 --with-sha" -j 8 2.7.5
-pythonbrew switch 2.7.5
-pip install ipython # interactive shell
-#pythonbrew venv create gunya -p 2.7.5
-#pythonbrew venv use gunya
-
 # ruby
 rbenv install 2.0.0-p247
 echo 'gem: --no-ri --no-rdoc' >> ~/.gemrc # no document
@@ -23,5 +13,5 @@ perlbrew switch perl-5.18.1
 
 # Node.js
 . ~/.nvm/nvm.sh
-nvm install v0.10.18
-nvm alias default v0.10.18
+nvm install v0.10.21
+nvm alias default v0.10.21

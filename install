@@ -22,7 +22,7 @@ case $uname in
   Linux)
     if [ -f /etc/debian_version ]; then
       sudo apt-get install aptitude
-      sudo aptitude install build-essentials git zsh curl
+      sudo aptitude install build-essential git zsh curl sudo vim
       # For building some language
       sudo aptitude install zlib1g-dev libssl-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev
       # For building Python
