@@ -16,6 +16,8 @@ case $uname in
     brew install zlib openssl sqlite libxml2 libxslt
     brew install gdbm readline
     brew install bison libyaml ncurses
+    brew tap phinze/homebrew-cask
+    brew install brew-cask
     # prevent scroll animation in iTerm2
     defaults write com.googlecode.iterm2 NSScrollAnimationEnabled -bool NO
     ;;
