@@ -36,6 +36,7 @@ if [ ! -d ~/.pyvenv ]; then
 
   echo 'WORKON_HOME=$HOME/.pyvenv/' >> ~/.zshrc
   echo '. $HOME/.pyvenv/py3/bin/virtualenvwrapper.sh' >> ~/.zshrc
+  echo 'source $HOME/.pyvenv/py3/bin/activate' >> ~/.zshrc
 fi
 
 # ruby
