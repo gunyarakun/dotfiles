@@ -29,6 +29,17 @@ source ~/.zsh/zsh/zshrc.index
 EOF
 fi
 
+# peco
+if [ ! -d ~/.peco ]; then
+  go get github.com/lestrrat/peco/cmd/peco
+  ln -snf $base_dir/peco ~/.peco
+fi
+
+# ghq
+if [ ! -d ~/.ghq ]; then
+  go get github.com/motemen/ghq
+fi
+
 # git
 ln -snf $base_dir/git/gitconfig ~/.gitconfig
 

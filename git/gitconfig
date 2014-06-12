@@ -1,11 +1,14 @@
 [user]
-  name = Tasuku SUENAGA a.k.a. gunyarakun
-  email = tasuku-s-github@titech.ac
+	name = Tasuku SUENAGA
+	email = tasuku.suenaga@dena.com
+#  name = Tasuku SUENAGA a.k.a. gunyarakun
+#  email = tasuku-s-github@titech.ac
 [include]
   path = .gitconfig.local
 [core]
   pager = less -R
   editor = vim
+	excludesfile = /Users/suenaga.tasuku/.gitignore_global
 [color]
   ui = auto
 [push]
@@ -14,3 +17,12 @@
   autosetuprebase = always
 [merge]
 #  ff = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

@@ -18,6 +18,7 @@ case $uname in
     brew install bison libyaml ncurses
     brew tap phinze/homebrew-cask
     brew install brew-cask
+    brew install go
     # prevent scroll animation in iTerm2
     defaults write com.googlecode.iterm2 NSScrollAnimationEnabled -bool NO
     ;;

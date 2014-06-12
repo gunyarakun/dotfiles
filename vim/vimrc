@@ -35,9 +35,9 @@ NeoBundle 'shawncplus/php.vim'
 NeoBundle 'jsx/jsx.vim'
 " Go
 set rtp+=$GOROOT/libexec/libexec/misc/vim
-exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
+" exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
 NeoBundle 'Blackrush/vim-gocode'
-autocmd BufWritePre *.go Fmt
+" autocmd BufWritePre *.go Fmt
 
 " highlight matchit
 NeoBundle "vimtaku/hl_matchit.vim"
