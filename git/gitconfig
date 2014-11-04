@@ -1,8 +1,6 @@
 [user]
-	name = Tasuku SUENAGA
-	email = tasuku.suenaga@dena.com
-#  name = Tasuku SUENAGA a.k.a. gunyarakun
-#  email = tasuku-s-github@titech.ac
+  name = Tasuku SUENAGA a.k.a. gunyarakun
+  email = tasuku-s-github@titech.ac
 [include]
   path = .gitconfig.local
 [core]
