@@ -31,8 +31,6 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'derekwyatt/vim-scala'
 " php
 NeoBundle 'shawncplus/php.vim'
-" jsx
-NeoBundle 'jsx/jsx.vim'
 " Go
 set rtp+=$GOROOT/libexec/libexec/misc/vim
 " exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
@@ -42,9 +40,6 @@ NeoBundle 'Blackrush/vim-gocode'
 " highlight matchit
 NeoBundle "vimtaku/hl_matchit.vim"
 
-" complete
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
 " quick run with <Leader>r
 NeoBundle 'thinca/vim-quickrun'
 " show errormarker
@@ -55,10 +50,8 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'Shougo/vimshell'
 " edit surrounded texts
 NeoBundle 'surround.vim'
-" Beautiful Powerline
-NeoBundle 'Lokaltog/vim-powerline'
-" JSX
-NeoBundle 'git://github.com/jsx/jsx.vim.git'
+" lightline
+NeoBundle 'itchyny/lightline.vim'
 
 " comment out with '\\'
 NeoBundle 'tpope/vim-commentary'
@@ -126,188 +119,70 @@ set visualbell
 set modeline
 set modelines=5
 
-" neocomplcache
-" tab completion
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-" don't cache japanese
-if !exists('g:neocomplcache_keyword_patterns')
-  let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-" TODO: check
-imap <expr><C-k> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<C-n>"
-smap <C-k> <Plug>(neosnippet_expand)
-
-let g:acp_enableAtStartup = 0 " disable AutoComplPop
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*' " ?
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_ctags_arguments_list = {
-  \ 'perl' : '-R -h ".pm"'
-  \ }
-let g:neosnippet#snippets_directory = $HOME . "/.vim/snippets"
-let g:neocomplcache_dictionary_filetype_lists = {
-  \ 'default' : '',
-  \ 'perl'    : $HOME . './vim/dict/perl.dict'
-  \ }
-
-" Powerline
+" lightline
 " NOTE: Requires patched font.
 "       https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher
-let g:Powerline_symbols='fancy'
-call Pl#Hi#Allocate({
-  \ 'black'          : 16,
-  \ 'white'          : 231,
-  \
-  \ 'darkestgreen'   : 22,
-  \ 'darkgreen'      : 28,
-  \
-  \ 'darkestcyan'    : 21,
-  \ 'mediumcyan'     : 117,
-  \
-  \ 'darkestblue'    : 24,
-  \ 'darkblue'       : 31,
-  \
-  \ 'darkestred'     : 52,
-  \ 'darkred'        : 88,
-  \ 'mediumred'      : 124,
-  \ 'brightred'      : 160,
-  \ 'brightestred'   : 196,
-  \
-  \ 'darkestyellow'  : 59,
-  \ 'darkyellow'     : 100,
-  \ 'darkestpurple'  : 57,
-  \ 'mediumpurple'   : 98,
-  \ 'brightpurple'   : 189,
-  \
-  \ 'brightorange'   : 208,
-  \ 'brightestorange': 214,
-  \
-  \ 'gray0'          : 233,
-  \ 'gray1'          : 235,
-  \ 'gray2'          : 236,
-  \ 'gray3'          : 239,
-  \ 'gray4'          : 240,
-  \ 'gray5'          : 241,
-  \ 'gray6'          : 244,
-  \ 'gray7'          : 245,
-  \ 'gray8'          : 247,
-  \ 'gray9'          : 250,
-  \ 'gray10'         : 252,
-  \ })
-" 'n': normal mode
-" 'i': insert mode
-" 'v': visual mode
-" 'r': replace mode
-" 'N': not active
-let g:Powerline#Colorschemes#my#colorscheme = Pl#Colorscheme#Init([
-  \ Pl#Hi#Segments(['SPLIT'], {
-    \ 'n': ['white', 'gray2'],
-    \ 'N': ['gray0', 'gray0'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['mode_indicator'], {
-    \ 'i': ['darkestgreen', 'white', ['bold']],
-    \ 'n': ['darkestcyan', 'white', ['bold']],
-    \ 'v': ['darkestpurple', 'white', ['bold']],
-    \ 'r': ['mediumred', 'white', ['bold']],
-    \ 's': ['white', 'gray5', ['bold']],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['fileinfo', 'filename'], {
-    \ 'i': ['white', 'darkestgreen', ['bold']],
-    \ 'n': ['white', 'darkestcyan', ['bold']],
-    \ 'v': ['white', 'darkestpurple', ['bold']],
-    \ 'r': ['white', 'mediumred', ['bold']],
-    \ 'N': ['gray0', 'gray2', ['bold']],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['branch', 'scrollpercent', 'raw', 'filesize'], {
-    \ 'n': ['gray2', 'gray7'],
-    \ 'N': ['gray0', 'gray2'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['fileinfo.filepath', 'status'], {
-    \ 'n': ['gray10'],
-    \ 'N': ['gray5'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['static_str'], {
-    \ 'n': ['white', 'gray4'],
-    \ 'N': ['gray1', 'gray1'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['fileinfo.flags'], {
-    \ 'n': ['white'],
-    \ 'N': ['gray4'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['currenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype', 'rvm:string', 'rvm:statusline', 'virtualenv:statusline', 'charcode', 'currhigroup'], {
-    \ 'n': ['gray9', 'gray4'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['lineinfo'], {
-    \ 'n': ['gray2', 'gray10'],
-    \ 'N': ['gray2', 'gray4'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['errors'], {
-    \ 'n': ['white', 'gray2'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['lineinfo.line.tot'], {
-    \ 'n': ['gray2'],
-    \ 'N': ['gray2'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['paste_indicator', 'ws_marker'], {
-    \ 'n': ['white', 'brightred', ['bold']],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['gundo:static_str.name', 'command_t:static_str.name'], {
-    \ 'n': ['white', 'mediumred', ['bold']],
-    \ 'N': ['brightred', 'darkestred', ['bold']],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['gundo:static_str.buffer', 'command_t:raw.line'], {
-    \ 'n': ['white', 'darkred'],
-    \ 'N': ['brightred', 'darkestred'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['gundo:SPLIT', 'command_t:SPLIT'], {
-    \ 'n': ['white', 'darkred'],
-    \ 'N': ['white', 'darkestred'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['ctrlp:focus', 'ctrlp:byfname'], {
-    \ 'n': ['brightpurple', 'darkestpurple'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['ctrlp:prev', 'ctrlp:next', 'ctrlp:pwd'], {
-    \ 'n': ['white', 'mediumpurple'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['ctrlp:item'], {
-    \ 'n': ['darkestpurple', 'white', ['bold']],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['ctrlp:marked'], {
-    \ 'n': ['brightestred', 'darkestpurple', ['bold']],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['ctrlp:count'], {
-    \ 'n': ['darkestpurple', 'white'],
-    \ }),
-  \
-  \ Pl#Hi#Segments(['ctrlp:SPLIT'], {
-    \ 'n': ['white', 'darkestpurple'],
-    \ }),
-  \ ])
-let g:Powerline_colorscheme='my'
-let g:Powerline_mode_n = 'NORMAL'
+let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ 'mode_map': {'c': 'NORMAL'},
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'modified': 'MyModified',
+        \   'readonly': 'MyReadonly',
+        \   'fugitive': 'MyFugitive',
+        \   'filename': 'MyFilename',
+        \   'fileformat': 'MyFileformat',
+        \   'filetype': 'MyFiletype',
+        \   'fileencoding': 'MyFileencoding',
+        \   'mode': 'MyMode'
+        \ }
+        \ }
+
+function! MyModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyFugitive()
+  try
+    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+      return fugitive#head()
+    endif
+  catch
+  endtry
+  return ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! MyFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! MyMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+" lightline END
 
 " For Mac scroll
 nnoremap <PageDown> <C-F>
