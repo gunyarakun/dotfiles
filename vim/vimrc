@@ -98,6 +98,7 @@ set laststatus=2
 set showcmd
 set showmode
 set showmatch
+set matchtime=2
 
 " misc
 set ambiwidth=double
@@ -107,6 +108,10 @@ set ttyfast
 set list
 set listchars=tab:▸\ ,eol:¬
 set wildmode=list:longest,full
+set display=lastline
+
+" map
+nnoremap Y y$
 
 " backup
 set nobackup
