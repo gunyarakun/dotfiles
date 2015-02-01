@@ -3,15 +3,18 @@
 set -e -u
 
 # ruby
-rbenv install 2.0.0-p247
+rbenv install 2.0.0-p481
 echo 'gem: --no-ri --no-rdoc' >> ~/.gemrc # no document
 
-# perl
-perlbrew install -j 8 --notest perl-5.18.1 || echo
-perlbrew switch perl-5.18.1
-# perlbrew install-cpanm
+## perl
+#perlbrew install -j 8 --notest perl-5.20.1 || echo
+#perlbrew switch perl-5.20
+## perlbrew install-cpanm
 
 # Node.js
 . ~/.nvm/nvm.sh
-nvm install v0.10.21
-nvm alias default v0.10.21
+nvm install v0.10.36
+nvm alias default v0.10.36
+
+# TypeScript
+npm install -g typescript typescript-tools
