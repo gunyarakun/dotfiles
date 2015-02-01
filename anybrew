@@ -24,7 +24,13 @@ esac
 # python
 if [ ! -d ~/.pyvenv ]; then
   mkdir ~/.pyvenv
-  cd ~/.pyvenv; pyvenv-3.4 py3
+  if [ -f `which pyvenv-3.4` ]; then
+    PYVENV=pyvenv-3.4
+  else
+    PYVENV=pyvenv-3.3
+  fi
+  # --without-pip for Ubuntu 14.04 LTS
+  cd ~/.pyvenv; $PYVENV --without-pip py3
   echo 'PATH=$HOME/.pyvenv/py3/bin:$PATH' >> ~/.zshrc
 
   PATH=$HOME/.pyvenv/py3/bin:$PATH
