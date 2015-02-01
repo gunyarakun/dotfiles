@@ -1,0 +1,6 @@
+# CUDA
+if [ -d "/Developer/NVIDIA/CUDA-6.5" ]; then
+  export PATH=/Developer/NVIDIA/CUDA-6.5/bin:$PATH
+  # Mac
+  export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-6.5/lib:$DYLD_LIBRARY_PATH
+fi

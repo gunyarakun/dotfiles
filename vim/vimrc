@@ -34,6 +34,10 @@ NeoBundle 'shawncplus/php.vim'
 " Go
 set rtp+=$GOROOT/libexec/libexec/misc/vim
 " exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
+" TypeScript
+NeoBundle 'leafgarland/typescript-vim.git'
+NeoBundle 'clausreinke/typescript-tools.git'
+
 NeoBundle 'Blackrush/vim-gocode'
 " autocmd BufWritePre *.go Fmt
 
