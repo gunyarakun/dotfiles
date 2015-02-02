@@ -26,11 +26,11 @@ if [ ! -d ~/.pyenv ]; then
   git clone https://github.com/yyuu/pyenv.git ~/.pyenv
   git clone git://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
   cat <<EOF >> ~/.zshenv
-export PYENV_ROOT="${HOME}/.pyenv"
-if [ -n ${PYENV_ROOT} ]; then
-  path=(${PYENV_ROOT}/bin ${PYENV_ROOT}/shims ${path})
+export PYENV_ROOT="\${HOME}/.pyenv"
+if [ -n \${PYENV_ROOT} ]; then
+  path=(\${PYENV_ROOT}/bin \${PYENV_ROOT}/shims \${path})
 fi
-eval "$(pyenv init -)"
+eval "\$(pyenv init -)"
 EOF
 fi
 
