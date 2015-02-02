@@ -22,27 +22,16 @@ case $uname in
 esac
 
 # python
-if [ ! -d ~/.pyvenv ]; then
-  mkdir ~/.pyvenv
-  if [ -f `which pyvenv-3.4` ]; then
-    PYVENV=pyvenv-3.4
-  else
-    PYVENV=pyvenv-3.3
-  fi
-  # --without-pip for Ubuntu 14.04 LTS
-  cd ~/.pyvenv; $PYVENV --without-pip py3
-  echo 'PATH=$HOME/.pyvenv/py3/bin:$PATH' >> ~/.zshrc
-
-  PATH=$HOME/.pyvenv/py3/bin:$PATH
-  rehash
-  curl -L http://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py | python
-  rehash
-  easy_install pip
-  pip install ipython virtualenvwrapper
-
-  echo 'WORKON_HOME=$HOME/.pyvenv/' >> ~/.zshrc
-  echo '. $HOME/.pyvenv/py3/bin/virtualenvwrapper.sh' >> ~/.zshrc
-  echo 'source $HOME/.pyvenv/py3/bin/activate' >> ~/.zshrc
+if [ ! -d ~/.pyenv ]; then
+  git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+  git clone git://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+  cat <<EOF >> ~/.zshenv
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -n ${PYENV_ROOT} ]; then
+  path=(${PYENV_ROOT}/bin ${PYENV_ROOT}/shims ${path})
+fi
+eval "$(pyenv init -)"
+EOF
 fi
 
 # ruby
@@ -53,7 +42,7 @@ fi
 if [ ! -d ~/.rbenv ]; then
   git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
   git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-  echo '[[ -s "${HOME}/.rbenv/bin/rbenv" ]] && export PATH="$HOME/.rbenv/bin:$PATH" && eval "$(rbenv init -)"' >> ~/.zshrc
+  echo '[[ -s "${HOME}/.rbenv/bin/rbenv" ]] && export PATH="$HOME/.rbenv/bin:$PATH" && eval "$(rbenv init -)"' >> ~/.zshenv
 
   mkdir -p ~/.rbenv/plugins
 
@@ -68,19 +57,19 @@ fi
 # perl
 if [ ! -d ~/.perlbrew ]; then
   eval $fetch $fetch_flags http://install.perlbrew.pl/ | PERLBREW_ROOT=~/.perlbrew bash
-  echo "export PERLBREW_ROOT=~/.perlbrew" >> ~/.zshrc
-  echo '[[ -s "${HOME}/.perlbrew/etc/bashrc" ]] && source $HOME/.perlbrew/etc/bashrc' >> ~/.zshrc
+  echo "export PERLBREW_ROOT=~/.perlbrew" >> ~/.zshenv
+  echo '[[ -s "${HOME}/.perlbrew/etc/bashrc" ]] && source $HOME/.perlbrew/etc/bashrc' >> ~/.zshenv
 fi
 
 # Node.js
 if [ ! -d ~/.nvm ]; then
   git clone git://github.com/creationix/nvm.git ~/.nvm
-  echo '[[ -s "${HOME}/.nvm/nvm.sh" ]] && source $HOME/.nvm/nvm.sh' >> ~/.zshrc
+  echo '[[ -s "${HOME}/.nvm/nvm.sh" ]] && source $HOME/.nvm/nvm.sh' >> ~/.zshenv
 fi
 
 cat <<INSTRUCTION
-Reload ~/.zshrc and execute anybrew-install
+Reload ~/.zshenv and execute anybrew-install
 
-  $ source ~/.zshrc
+  $ source ~/.zshenv
   $ ./anybrew-install
 INSTRUCTION

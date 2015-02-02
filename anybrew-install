@@ -2,6 +2,10 @@
 # vim: set expandtab ts=2 sw=2 nowrap ft=sh ff=unix : */
 set -e -u
 
+# Python
+pyenv install 2.7.9
+pyenv rehash
+
 # ruby
 rbenv install 2.0.0-p481
 echo 'gem: --no-ri --no-rdoc' >> ~/.gemrc # no document
