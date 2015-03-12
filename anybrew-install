@@ -5,6 +5,7 @@ set -e -u
 # Python
 PYTHON_CONFIGURE_OPTS="--enable-shared"
 pyenv install 2.7.9
+pyenv install 3.4.3
 pyenv rehash
 
 # ruby
