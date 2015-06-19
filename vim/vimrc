@@ -3,11 +3,11 @@ filetype off
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc()
 endif
 
+call neobundle#begin(expand('~/.vim/bundle/'))
 " NeoBundle
-NeoBundle 'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " EditorConfig
 NeoBundle 'editorconfig-vim'
@@ -62,6 +62,8 @@ NeoBundle 'tpope/vim-commentary'
 " handle lines with same indent spaces as text object with 'ai'/'ii'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
+
+call neobundle#end()
 
 " after Bundle
 filetype plugin indent on
