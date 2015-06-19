@@ -1,10 +1,10 @@
 # CUDA
 
 # Mac
-if [ -d "/Developer/NVIDIA/CUDA-6.5" ]; then
-  export PATH=/Developer/NVIDIA/CUDA-6.5/bin:$PATH
-  export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-6.5/lib:$DYLD_LIBRARY_PATH
-elif [ -d "/usr/local/cuda-6.5" ]; then
-  export PATH=/usr/local/cuda-6.5/bin:$PATH
-  export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:$LD_LIBRARY_PATH
+if [ -d "/Developer/NVIDIA/CUDA-7.0" ]; then
+  export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
+  export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
+elif [ -d "/usr/local/cuda-7.0" ]; then
+  export PATH=/usr/local/cuda-7.0/bin:$PATH
+  export LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64:$LD_LIBRARY_PATH
 fi
