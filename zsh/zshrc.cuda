@@ -1,10 +1,11 @@
 # CUDA
+OS=`uname`
 
-# Mac
-if [ -d "/Developer/NVIDIA/CUDA-7.0" ]; then
-  export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
-  export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
-elif [ -d "/usr/local/cuda-7.0" ]; then
-  export PATH=/usr/local/cuda-7.0/bin:$PATH
-  export LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64:$LD_LIBRARY_PATH
+if [ -d "/usr/local/cuda" ]; then
+  export PATH=/usr/local/cuda/bin:$PATH
+  if [ "$OS" = "Darwin" ]; then
+    export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
+  elif [ "$OS" = "Linux" ]; then
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
+  fi
 fi
