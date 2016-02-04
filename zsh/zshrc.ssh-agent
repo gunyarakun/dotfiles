@@ -2,4 +2,5 @@ SSH_AGENT_PATH=`which ssh-agent`
 SSH_AGENT_COUNT=`ps x | grep $SSH_AGENT_PATH | grep -v grep | cut -d ' ' -f 1 | wc -l`
 if [ $SSH_AGENT_COUNT -eq 0 ]; then
   source `$SSH_AGENT_PATH`
+  find ~/.ssh | grep "/id_rsa\\.[^/]" | grep -v "\\.pub$" | xargs ssh-add
 fi
