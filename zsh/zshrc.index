@@ -6,6 +6,7 @@ source ~/.zsh/zsh/zshrc.httpd
 source ~/.zsh/zsh/zshrc.cuda
 source ~/.zsh/zsh/zshrc.ssh-agent
 source ~/.zsh/zsh/zshrc.langenv
+source ~/.zsh/zsh/zshrc.git
 
 setopt no_cdable_vars
 alias cp='nocorrect cp'
