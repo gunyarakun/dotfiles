@@ -17,10 +17,6 @@ EOPLUGINS
     # completions
     zgen load zsh-users/zsh-completions src
 
-    # theme
-    zgen load mafredri/zsh-async # for pure theme
-    zgen load sindresorhus/pure
-
     # save all to init script
     zgen save
 fi

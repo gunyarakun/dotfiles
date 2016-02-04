@@ -10,6 +10,12 @@ source ~/.zsh/zsh/zshrc.syntax-highlighting-style
 
 zstyle ':completion:*:*:git:*' script ~/.zsh/zsh/zshrc.git-completion
 
+fpath=( "${HOME}/.zsh/zsh/zfunctions" $fpath )
+
+# load pure theme
+autoload -U promptinit && promptinit
+prompt pure
+
 setopt no_cdable_vars
 alias cp='nocorrect cp'
 export EDITOR=vim
