@@ -2,8 +2,8 @@
 typeset -U path
 
 for xenv in pyenv plenv rbenv nodenv; do
-  if [ -d .$xenv ]; then
-    path=(.$xenv/bin .$xenv/shims $path)
+  if [ -d ${HOME}/.$xenv ]; then
+    path=(${HOME}/.$xenv/bin ${HOME}/.$xenv/shims $path)
     eval "$(SHELL=zsh $xenv init - --no-rehash)"
   fi
 done
