@@ -27,9 +27,12 @@ rbenv rehash
 
 # perl
 (cd ~/.plenv && git pull)
-plenv install 5.22.1
-plenv global 5.22.1
-plenv install-cpanm
+(cd ~/.plenv/plugins/perl-build && git pull)
+if [ ! -d ~/.plenv/versions/5.22.1 ]; then
+  plenv install 5.22.1
+  plenv global 5.22.1
+  plenv install-cpanm
+fi
 
 # Node.js
 nodenv install 5.5.0
