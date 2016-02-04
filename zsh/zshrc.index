@@ -6,6 +6,8 @@ source ~/.zsh/zsh/zshrc.httpd
 source ~/.zsh/zsh/zshrc.cuda
 source ~/.zsh/zsh/zshrc.ssh-agent
 source ~/.zsh/zsh/zshrc.langenv
+source ~/.zsh/zsh/zshrc.syntax-highlighting-style
+
 zstyle ':completion:*:*:git:*' script ~/.zsh/zsh/zshrc.git-completion
 
 setopt no_cdable_vars

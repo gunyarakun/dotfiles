@@ -1,0 +1,54 @@
+# For zsh-syntax-highlighting
+if [[ "$(tput colors)" == "256" ]]; then
+    ZSH_HIGHLIGHT_STYLES[default]=none
+    ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=160
+    ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=037,bold #,standout
+    ZSH_HIGHLIGHT_STYLES[alias]=fg=064,bold
+    ZSH_HIGHLIGHT_STYLES[builtin]=fg=064,bold
+    ZSH_HIGHLIGHT_STYLES[function]=fg=064,bold
+    ZSH_HIGHLIGHT_STYLES[command]=fg=064,bold
+    ZSH_HIGHLIGHT_STYLES[precommand]=fg=064,underline
+    ZSH_HIGHLIGHT_STYLES[commandseparator]=none
+    ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=037
+    ZSH_HIGHLIGHT_STYLES[path]=fg=166,underline
+    ZSH_HIGHLIGHT_STYLES[globbing]=fg=033
+    ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=white,underline
+    ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=125,bold
+    ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=125,bold
+    ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
+    ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=136
+    ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=136
+    ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=136
+    ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=136
+    ZSH_HIGHLIGHT_STYLES[assign]=fg=037
+elif [[ "$(tput colors)" == "8" ]]; then
+    echo "It's better to use 256 color terminal."
+
+    ZSH_HIGHLIGHT_STYLES[default]=none
+    ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
+    ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=yellow
+    ZSH_HIGHLIGHT_STYLES[alias]=fg=green
+    ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=green,underline
+    ZSH_HIGHLIGHT_STYLES[builtin]=fg=green
+    ZSH_HIGHLIGHT_STYLES[function]=fg=green
+    ZSH_HIGHLIGHT_STYLES[command]=fg=green
+    ZSH_HIGHLIGHT_STYLES[precommand]=fg=green,underline
+    ZSH_HIGHLIGHT_STYLES[commandseparator]=none
+    ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=green
+    ZSH_HIGHLIGHT_STYLES[path]=underline
+    ZSH_HIGHLIGHT_STYLES[path_prefix]=underline
+    ZSH_HIGHLIGHT_STYLES[globbing]=fg=cyan # original blue
+    ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=cyan # original blue
+    ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none
+    ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=none
+    ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
+    ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=yellow
+    ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow
+    ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=fg=yellow
+    ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=cyan
+    ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=cyan
+    ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]=fg=cyan
+    ZSH_HIGHLIGHT_STYLES[assign]=none
+    ZSH_HIGHLIGHT_STYLES[redirection]=none
+    ZSH_HIGHLIGHT_STYLES[comment]=fg=black,bold
+fi
