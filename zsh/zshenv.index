@@ -1,0 +1,12 @@
+# zmodload zsh/zprof
+
+typeset -U path cdpath fpath manpath
+
+# golang
+export GOPATH=$HOME/go
+if (( $+commands[go] )); then
+  path+=(
+    $GOPATH/bin(N-/)
+    $(go env GOROOT)/bin(N-/)
+  )
+fi

@@ -1,0 +1,35 @@
+#!/bin/zsh
+# vim: set expandtab ts=2 sw=2 nowrap ft=sh ff=unix : */
+set -e -u
+
+export PATH=~/.pyenv/bin:~/.rbenv/bin:~/.plenv/bin:~/.nodenv/bin:${PATH}
+
+# Python
+(cd ~/.pyenv && git pull)
+
+PYTHON_CONFIGURE_OPTS="--enable-shared"
+if [ ! -d ~/.pyenv/versions/2.7.11 ]; then
+  pyenv install 2.7.11
+fi
+if [ ! -d ~/.pyenv/versions/3.5.1 ]; then
+  pyenv install 3.5.1
+fi
+pyenv rehash
+
+# ruby
+(cd ~/.rbenv && git pull)
+(cd ~/.rbenv/plugins/ruby-build && git pull)
+if [ ! -d ~/.rbenv/versions/2.3.0 ]; then
+  rbenv install 2.3.0
+fi
+echo 'gem: --no-ri --no-rdoc' >> ~/.gemrc # no document
+rbenv rehash
+
+# perl
+(cd ~/.plenv && git pull)
+plenv install 5.22.1
+plenv global 5.22.1
+plenv install-cpanm
+
+# Node.js
+nodenv install 5.5.0
