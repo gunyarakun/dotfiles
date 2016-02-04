@@ -2,7 +2,6 @@ source ~/.zsh/zsh/zshrc.zgen
 source ~/.zsh/zsh/zshrc.ls-abbrev
 source ~/.zsh/zsh/zshrc.enter-ls-git-status
 source ~/.zsh/zsh/zshrc.golang
-source ~/.zsh/zsh/zshrc.peco
 source ~/.zsh/zsh/zshrc.httpd
 source ~/.zsh/zsh/zshrc.cuda
 source ~/.zsh/zsh/zshrc.ssh-agent
