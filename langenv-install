@@ -35,4 +35,8 @@ if [ ! -d ~/.plenv/versions/5.22.1 ]; then
 fi
 
 # Node.js
-nodenv install 5.5.0
+(cd ~/.nodenv && git pull)
+(cd ~/.nodenv/plugins/node-build && git pull)
+if [ ! -d ~/.nodenv/versions/5.5.0 ]; then
+  nodenv install 5.5.0
+fi
