@@ -21,3 +21,8 @@ case ${OSTYPE} in
     alias crontab='crontab -i'
     ;;
 esac
+
+# zprof (you can profile with "zmodload zsh/prof" on .zshenv)
+if type zprof > /dev/null 2>&1; then
+  zprof | less
+fi
