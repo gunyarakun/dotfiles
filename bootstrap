@@ -8,11 +8,12 @@ base_dir=$(cd $cwd; pwd)
 # bin
 if [ ! -d ~/bin ]; then
   mkdir ~/bin
-  for path in `ls -1 bin/*`
-  do
-    ln -snf $base_dir/$path ~/$path
-  done
 fi
+
+for path in `ls -1 bin/*`
+do
+  ln -snf $base_dir/$path ~/$path
+done
 
 # zsh
 if [ ! -d ~/.zsh ]; then
