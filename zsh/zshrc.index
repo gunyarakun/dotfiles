@@ -1,3 +1,5 @@
+fpath=( "${HOME}/.zsh/zsh/zfunctions" $fpath )
+
 source ~/.zsh/zsh/zshrc.zgen
 source ~/.zsh/zsh/zshrc.ls-abbrev
 source ~/.zsh/zsh/zshrc.enter-ls-git-status
@@ -7,10 +9,6 @@ source ~/.zsh/zsh/zshrc.cuda
 source ~/.zsh/zsh/zshrc.ssh-agent
 source ~/.zsh/zsh/zshrc.langenv
 source ~/.zsh/zsh/zshrc.syntax-highlighting-style
-
-zstyle ':completion:*:*:git:*' script ~/.zsh/zsh/zshrc.git-completion
-
-fpath=( "${HOME}/.zsh/zsh/zfunctions" $fpath )
 
 # load pure theme
 autoload -U promptinit && promptinit
