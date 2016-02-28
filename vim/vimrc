@@ -1,71 +1,34 @@
 set nocompatible
 filetype off
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-" NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+call dein#begin(s:dein_dir)
 
-" EditorConfig
-NeoBundle 'editorconfig-vim'
-" Auto close
-NeoBundle 'AutoClose'
-" relative move with "'k"
-NeoBundle 'Lokaltog/vim-easymotion'
-" show & delete trailing space
-NeoBundle 'csexton/trailertrash.vim'
-" autocmd myautocmd VimEnter,WinEnter * match Error /\s\+$/
-" git
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'gregsexton/gitv'
-" rails
-NeoBundle 'tpope/vim-rails'
-" perl
-NeoBundle 'petdance/vim-perl'
-" javascript
-NeoBundle 'pangloss/vim-javascript'
-" scala
-NeoBundle 'derekwyatt/vim-scala'
-" php
-NeoBundle 'shawncplus/php.vim'
-" Go
-set rtp+=$GOROOT/libexec/libexec/misc/vim
-" exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
-" TypeScript
-NeoBundle 'leafgarland/typescript-vim.git'
-NeoBundle 'clausreinke/typescript-tools.git'
+let s:toml      = '~/.vim/rc/dein.toml'
+let s:lazy_toml = '~/.vim/rc/dein_lazy.toml'
 
-NeoBundle 'Blackrush/vim-gocode'
-" autocmd BufWritePre *.go Fmt
+if dein#load_cache([expand('<sfile>'), s:toml, s:lazy_toml])
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#save_cache()
+endif
 
-" highlight matchit
-NeoBundle "vimtaku/hl_matchit.vim"
+call dein#end()
 
-" quick run with <Leader>r
-NeoBundle 'thinca/vim-quickrun'
-" show errormarker
-NeoBundle 'errormarker.vim'
-" toggle comment with ',,'
-NeoBundle 'scrooloose/nerdcommenter'
-" show vimshell as window
-NeoBundle 'Shougo/vimshell'
-" edit surrounded texts
-NeoBundle 'surround.vim'
-" lightline
-NeoBundle 'itchyny/lightline.vim'
+if dein#check_install()
+  call dein#install()
+endif
 
-" comment out with '\\'
-NeoBundle 'tpope/vim-commentary'
-" handle lines with same indent spaces as text object with 'ai'/'ii'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'kana/vim-textobj-indent'
-
-call neobundle#end()
-
-" after Bundle
+" after dein
 filetype plugin indent on
 syntax enable
 
