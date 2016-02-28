@@ -12,7 +12,7 @@ case $uname in
       ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
     fi
     brew update
-    brew install git zsh
+    brew install git zsh vim
     brew install zlib openssl sqlite libxml2 libxslt
     brew install gdbm readline
     brew install bison libyaml ncurses
