@@ -1,0 +1,66 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# EditorConfig
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+# show & delete trailing space
+[[plugins]]
+repo = 'csexton/trailertrash.vim'
+
+# Auto close
+[[plugins]]
+repo = 'vim-scripts/AutoClose'
+
+# lightline
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# relative move with "'k"
+[[plugins]]
+repo = 'Lokaltog/vim-easymotion'
+
+# git
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+[[plugins]]
+repo = 'gregsexton/gitv'
+
+# rails
+[[plugins]]
+repo = 'tpope/vim-rails'
+
+# highlight matchit
+[[plugins]]
+repo = "vimtaku/hl_matchit.vim"
+
+# quick run with <Leader>r
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+# show errormarker
+[[plugins]]
+repo = 'vim-scripts/errormarker.vim'
+
+# toggle comment with ',,'
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+
+# show vimshell as window
+[[plugins]]
+repo = 'Shougo/vimshell'
+
+# edit surrounded texts
+[[plugins]]
+repo = 'vim-scripts/surround.vim'
+
+# comment out with '\\'
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+# handle lines with same indent spaces as text object with 'ai'/'ii'
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+[[plugins]]
+repo = 'kana/vim-textobj-indent'
