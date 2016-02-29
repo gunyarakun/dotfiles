@@ -70,7 +70,6 @@ set showmatch
 set matchtime=2
 
 " misc
-set ambiwidth=double
 set number
 set ruler
 set ttyfast
