@@ -48,4 +48,3 @@ ln -snf $base_dir/git/gitconfig ~/.gitconfig
 # vim
 ln -snf $base_dir/vim/vimrc ~/.vimrc
 ln -snf $base_dir/vim/vim ~/.vim
-vim +NeoBundleInstall +qall
