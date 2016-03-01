@@ -42,6 +42,9 @@ set fenc=utf-8
 set fencs=utf-8,euc-jp,cp932
 set fileformats=unix,dos
 
+" backspace
+set backspace=indent,eol,start
+
 " tab
 set expandtab
 set smartindent

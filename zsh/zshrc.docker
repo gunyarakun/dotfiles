@@ -1,7 +1,3 @@
 alias dc="docker-compose"
 alias dm="docker-machine"
 alias dm-env="eval \$(docker-machine env)"
-
-if hash docker-machine 2>/dev/null; then
-  dm-env > /dev/null 2>&1
-fi
