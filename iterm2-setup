@@ -1,0 +1,41 @@
+#!/bin/sh
+# vim: set expandtab ts=2 sw=2 nowrap ft=sh ff=unix : */
+if [ -d /Applications/iTerm.app ]; then
+  # prevent scroll animation in iTerm2
+  defaults write com.googlecode.iterm2 NSScrollAnimationEnabled -bool NO
+  # Don't use ambiguous double width in iTerm2
+  /usr/libexec/PlistBuddy -c \
+    "Set :\"New Bookmarks\":0:\"Ambiguous Double Width\" false" \
+    ~/Library/Preferences/com.googlecode.iterm2.plist
+  # Install vim powerline fonts
+  git clone --depth 1 https://github.com/powerline/fonts.git
+  (cd fonts && ./install.sh)
+  rm -rf fonts
+  # Set Powerline fonts
+  /usr/libexec/PlistBuddy -c \
+    "Set :\"New Bookmarks\":0:\"Normal Font\" \"MesloLGM-RegularForPowerline 12\"" \
+    ~/Library/Preferences/com.googlecode.iterm2.plist
+  /usr/libexec/PlistBuddy -c \
+    "Set :\"New Bookmarks\":0:\"Non Ascii Font\" \"MesloLGM-RegularForPowerline 12\"" \
+    ~/Library/Preferences/com.googlecode.iterm2.plist
+  # Install color schemas
+  set +e
+  /usr/libexec/PlistBuddy -c \
+    "Add :'Custom Color Presets':'Cobalt2' dict" \
+    ~/Library/Preferences/com.googlecode.iterm2.plist
+  /usr/libexec/PlistBuddy -c \
+    "Merge 'iTerm2/Cobalt2.itermcolors' :'Custom Color Presets':'Cobalt2'" \
+    ~/Library/Preferences/com.googlecode.iterm2.plist
+  /usr/libexec/PlistBuddy -c \
+    "Add :'Custom Color Presets':'Tomorrow Night Bright' dict" \
+    ~/Library/Preferences/com.googlecode.iterm2.plist
+  /usr/libexec/PlistBuddy -c \
+    "Merge 'iTerm2/Tomorrow Night Bright.itermcolors' :'Custom Color Presets':'Tomorrow Night Bright'" \
+    ~/Library/Preferences/com.googlecode.iterm2.plist
+  /usr/libexec/PlistBuddy -c \
+    "Add :'Custom Color Presets':'Tomorrow Night Blue' dict" \
+    ~/Library/Preferences/com.googlecode.iterm2.plist
+  /usr/libexec/PlistBuddy -c \
+    "Merge 'iTerm2/Tomorrow Night Blue.itermcolors' :'Custom Color Presets':'Tomorrow Night Blue'" \
+    ~/Library/Preferences/com.googlecode.iterm2.plist
+fi
