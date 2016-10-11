@@ -8,7 +8,7 @@ uname=`uname`
 case $uname in
   Darwin)
     # TODO: check whether Xcode is installed or not
-    if [ ! -d /usr/local/Cellar ]; then
+    if [ ! -d /usr/local/Homebrew ]; then
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
     brew update
