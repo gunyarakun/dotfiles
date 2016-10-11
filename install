@@ -9,7 +9,7 @@ case $uname in
   Darwin)
     # TODO: check whether Xcode is installed or not
     if [ ! -d /usr/local/Cellar ]; then
-      ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
     brew update
     brew install \
