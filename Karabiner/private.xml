@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!--
+GunyaSwitcher
+private.xml for Karabiner For English/Japanese/Chinese input
+Version 0.0.1
+Tasuku SUENAGA a.k.a. gunyarakun
+ref. POCHI by Minoru (http://seoul-life.blog.jp)
+-->
+<root>
+  <item>
+    <name>EJCSwitcher ver.0.0.1</name>
+    <item>
+      <name>Ctrl + 1, 2, 3, 4 -> Input 1, 2, 3, 4</name>
+      <identifier>private.change_select-ctrl-num</identifier>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_1, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        Option::NOREPEAT,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_2, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
+        Option::NOREPEAT,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_3, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
+        Option::NOREPEAT,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_4, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
+        Option::NOREPEAT,
+      </autogen>
+    </item>
+    <!-- END: main -->
+
+    <item>
+      <name>Input Pinyin Symbols: Ctrl + 5, 6, 7, 8 </name>
+      <identifier>private.change_pinyin_input</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_5, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::A, ModifierFlag::OPTION_L,
+        Option::NOREPEAT,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_6, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::E, ModifierFlag::OPTION_L,
+        Option::NOREPEAT,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_7, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::V, ModifierFlag::OPTION_L,
+        Option::NOREPEAT,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_8, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::BACKQUOTE, ModifierFlag::OPTION_L,
+        Option::NOREPEAT,
+      </autogen>
+    </item>
+    <!-- END: pinyin -->
+
+    <item>
+      <name>TEST: Only for testing</name>
+      <name>Open Eventviewer by 'E', Reload XML by 'R'</name>
+
+      <identifier>private.change_input_source_to_language_test</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::E,
+        KeyCode::VK_OPEN_URL_APP_Karabiner_EventViewer,
+        Option::NOREPEAT,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::R,
+        KeyCode::VK_OPEN_URL_APP_Karabiner_ReloadXML,
+        Option::NOREPEAT,
+      </autogen>
+    </item>
+    <!-- END: test -->
+  </item>
+
+  <vkchangeinputsourcedef>
+    <name>KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH</name>
+    <languagecode>en</languagecode>
+  </vkchangeinputsourcedef>
+</root>
