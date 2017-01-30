@@ -1,6 +1,6 @@
 fpath=( "${HOME}/.zsh/zsh/zfunctions" $fpath )
 
-source ~/.zsh/zsh/zshrc.zgen
+source ~/.zsh/zsh/zshrc.zplug
 source ~/.zsh/zsh/zshrc.ls-abbrev
 source ~/.zsh/zsh/zshrc.enter-ls-git-status
 source ~/.zsh/zsh/zshrc.golang

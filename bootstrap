@@ -19,16 +19,20 @@ done
 if [ ! -d ~/.zsh ]; then
   mkdir ~/.zsh
   ln -snf $base_dir/zsh ~/.zsh/zsh
-else
-  # remove antigen
-  if [ -d ~/.zsh/antigen ]; then
-    rm -rf ~/.zsh/antigen
-  fi
 fi
 
-if [ ! -d ~/.zsh/zgen ]; then
-  git clone git@github.com:tarjoilija/zgen.git ~/.zsh/zgen
+# remove antigen
+if [ -d ~/.zsh/antigen ]; then
+  rm -rf ~/.zsh/antigen
 fi
+
+# remove zgen
+if [ -d ~/.zsh/zgen ]; then
+  rm -rf ~/.zsh/zgen
+fi
+
+# zplug
+curl -sL zplug.sh/installer | zsh
 
 if ! grep -xFsq "source ~/.zsh/zsh/zshenv.index" ~/.zshenv; then
   cat <<EOF >> ~/.zshenv
