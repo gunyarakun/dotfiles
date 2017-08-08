@@ -19,6 +19,7 @@ case $uname in
       gdbm readline \
       bison libyaml ncurses \
       go \
+      ghq peco \
       ripgrep
     ;;
   Linux)
