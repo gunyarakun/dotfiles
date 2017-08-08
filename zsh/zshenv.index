@@ -4,9 +4,6 @@ typeset -U path cdpath fpath manpath
 
 # golang
 export GOPATH=$HOME/dev
-if (( $+commands[go] )); then
-  path+=(
-    $GOPATH/bin(N-/)
-    $(go env GOROOT)/bin(N-/)
-  )
-fi
+path+=(
+  $GOPATH/bin(N-/)
+)
