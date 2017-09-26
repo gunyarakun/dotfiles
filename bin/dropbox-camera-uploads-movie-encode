@@ -1,0 +1,26 @@
+#!/usr/bin/ruby
+require 'fileutils'
+TARGET = '/Users/tasuku/Dropbox/Camera Uploads'
+unless File.directory?(TARGET)
+  puts "Cannot find #{TARGET}"
+  exit 0
+end
+
+Dir.chdir(TARGET)
+FileUtils.mkdir_p(File.join(TARGET, 'mp4'))
+Dir.glob("**/*") do |f|
+  ext = File.extname(f).downcase.intern
+  case ext
+  when :'.mov', :'.mts'
+    base = File.basename(f, '.*')
+    outf = File.join('mp4', base + '.mp4')
+#    done = "#{outf}.done"
+#    next if File.exists?(done)
+    if base.match(/\A\d{4}-\d{2}-\d{2} \d{2}.\d{2}.\d{2}\z/)
+      creation_time = base.tr('.', ':')
+      system('ffmpeg', '-i', f, '-vcodec', 'libx265', '-metadata', "creation_time=#{creation_time}", outf)
+
+      FileUtils.rm(f)
+    end
+  end
+end
