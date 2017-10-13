@@ -33,6 +33,10 @@ repo = 'gregsexton/gitv'
 [[plugins]]
 repo = 'rust-lang/rust.vim'
 on_ft = ['rust']
+hook_post_source = '''
+  let g:rustfmt_autosave = 1
+  let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+'''
 
 # rails
 [[plugins]]
