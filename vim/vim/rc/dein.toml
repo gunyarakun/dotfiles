@@ -29,19 +29,6 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'gregsexton/gitv'
 
-# rust
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = ['rust']
-hook_post_source = '''
-  let g:rustfmt_autosave = 1
-  let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
-'''
-
-# rails
-[[plugins]]
-repo = 'tpope/vim-rails'
-
 # highlight matchit
 [[plugins]]
 repo = "vimtaku/hl_matchit.vim"
