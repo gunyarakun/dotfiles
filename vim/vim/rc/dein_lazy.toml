@@ -9,6 +9,15 @@ on_source = ['unite.vim']
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 
+# Markdown
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_ft = ['markdown']
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown']
+
 [[plugins]]
 repo = 'kannokanno/previm'
 depends = ['open-browser.vim']
