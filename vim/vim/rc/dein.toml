@@ -29,10 +29,6 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'gregsexton/gitv'
 
-# rails
-[[plugins]]
-repo = 'tpope/vim-rails'
-
 # highlight matchit
 [[plugins]]
 repo = "vimtaku/hl_matchit.vim"
