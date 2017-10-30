@@ -3,19 +3,20 @@
 source "${HOME}/.zplug/init.zsh"
 
 zplug "chrissicool/zsh-256color", use:"zsh-256color.plugin.zsh"
-zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-completions", lazy:true
 
 # zplug "sorin-ionescu/prezto"
 
 # bundles from the default repo
-zplug "plugins/brew", from:oh-my-zsh, if:"which brew"
-zplug "plugins/gem", from:oh-my-zsh, if:"which gem"
-zplug "plugins/git", from:oh-my-zsh, if:"which git"
-zplug "plugins/pip", from:oh-my-zsh, if:"which pip"
-zplug "plugins/ruby", from:oh-my-zsh, if:"which ruby"
+zplug "plugins/brew", from:oh-my-zsh, if:"which brew", lazy:true
+zplug "plugins/gem", from:oh-my-zsh, if:"which gem", lazy:true
+zplug "plugins/git", from:oh-my-zsh, if:"which git", lazy:true
+zplug "plugins/pip", from:oh-my-zsh, if:"which pip", lazy:true
+zplug "plugins/ruby", from:oh-my-zsh, if:"which ruby", lazy:true
 
 zplug "themes/robbyrussell", from:oh-my-zsh
-zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]", lazy:true
+
 
 # syntax highlighting
 zplug "zsh-users/zsh-syntax-highlighting"
