@@ -32,7 +32,7 @@ if [ -d ~/.zsh/zgen ]; then
 fi
 
 # zplug
-curl -sL zplug.sh/installer | zsh
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
 
 if ! grep -xFsq "source ~/.zsh/zsh/zshenv.index" ~/.zshenv; then
   cat <<EOF >> ~/.zshenv
