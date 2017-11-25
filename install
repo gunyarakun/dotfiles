@@ -21,7 +21,8 @@ case $uname in
       go \
       ghq peco \
       ripgrep \
-      fd
+      fd \
+      coreutils bvi cheat jq ngrep wrk
     ;;
   Linux)
     if [ -f /etc/debian_version ]; then
@@ -31,8 +32,9 @@ case $uname in
         build-essential git zsh curl sudo vim \
         zlib1g-dev libssl-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev \
         libgdbm-dev libbz2-dev libreadline-dev \
-        bison libreadline6-dev libyaml-dev libncurses5-dev
-      # TODO: add ripgrep/fd when added
+        bison libreadline6-dev libyaml-dev libncurses5-dev \
+        bvi jq ngrep
+      # TODO: add ripgrep/fd/cheat/wrk when added
     elif [ -f /etc/redhat-release ]; then
       sudo yum update
       sudo yum groupinstall "Development Tools"
