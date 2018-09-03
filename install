@@ -22,7 +22,7 @@ case $uname in
       ghq peco \
       ripgrep \
       fd \
-      coreutils bvi cheat jq ngrep wrk
+      coreutils bvi cheat jq ngrep wrk bat
     ;;
   Linux)
     if [ -f /etc/debian_version ]; then
@@ -34,7 +34,7 @@ case $uname in
         libgdbm-dev libbz2-dev libreadline-dev \
         bison libreadline6-dev libyaml-dev libncurses5-dev \
         bvi jq ngrep
-      # TODO: add ripgrep/fd/cheat/wrk when added
+      # TODO: add ripgrep/fd/cheat/wrk/bat when added
     elif [ -f /etc/redhat-release ]; then
       sudo yum update
       sudo yum groupinstall "Development Tools"
