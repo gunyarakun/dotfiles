@@ -15,7 +15,7 @@ case $uname in
     brew install vim --with-python
     brew install \
       git zsh \
-      homebrew/dupes/zlib openssl sqlite libxml2 libxslt \
+      zlib openssl sqlite libxml2 libxslt \
       gdbm readline \
       bison libyaml ncurses \
       go \
