@@ -49,6 +49,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set smarttab
+set tabpagemax=100
 
 " scroll
 set scroll=11
