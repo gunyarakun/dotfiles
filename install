@@ -22,7 +22,7 @@ case $uname in
       ghq peco \
       ripgrep \
       fd \
-      coreutils bvi jq ngrep wrk bat
+      coreutils bvi jq ngrep wrk bat autossh
     brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype \
       --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus \
       --with-x265 --with-webp
@@ -36,7 +36,7 @@ case $uname in
         zlib1g-dev libssl-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev \
         libgdbm-dev libbz2-dev libreadline-dev \
         bison libreadline6-dev libyaml-dev libncurses5-dev \
-        bvi jq ngrep
+        bvi jq ngrep autossh
       # TODO: add ripgrep/fd/cheat/wrk/bat when added
     elif [ -f /etc/redhat-release ]; then
       sudo yum update
