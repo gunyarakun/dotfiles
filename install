@@ -12,7 +12,7 @@ case $uname in
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
     brew update
-    brew install vim --with-python
+    brew install vim --with-python@2
     brew install \
       git zsh \
       zlib openssl sqlite libxml2 libxslt \
