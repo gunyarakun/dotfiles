@@ -1,5 +1,16 @@
 # zmodload zsh/zprof
-setopt no_global_rcs # ref.) http://karur4n.hatenablog.com/entry/2016/01/18/100000
+
+
+# ref.) http://karur4n.hatenablog.com/entry/2016/01/18/100000
+setopt no_global_rcs
+path+=(
+  /usr/local/bin
+  /usr/bin
+  /bin
+  /usr/sbin
+  /sbin
+)
+# end
 
 typeset -U path cdpath fpath manpath
 
