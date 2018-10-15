@@ -1,4 +1,5 @@
 # zmodload zsh/zprof
+setopt no_global_rcs # ref.) http://karur4n.hatenablog.com/entry/2016/01/18/100000
 
 typeset -U path cdpath fpath manpath
 
