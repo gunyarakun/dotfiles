@@ -1,0 +1,37 @@
+#!/bin/bash
+
+CMD_SSH=/usr/bin/ssh
+
+BGCOLOR_NORMAL=000
+BGCOLOR_WARNING=210
+BGCOLOR_CAUTION=300
+
+REGEXP_CAUTION_HOST='bastion.|ec2-user'
+
+# Ctrl-C
+trap 'echo "Interrupted."; bg_color_normal; exit;' INT
+
+# Change BG Color (iTerm2)
+function bg_color_change(){
+  echo -ne '\033]1337;SetColors=bg='$1'\a'
+}
+
+# Change BG Color back to normal (iTerm2)
+function bg_color_normal(){
+  bg_color_change $BGCOLOR_NORMAL
+}
+
+# bgcolor change
+if egrep -q "$REGEXP_CAUTION_HOST" <(echo $*) 2>&1; then
+  bg_color_change $BGCOLOR_CAUTION
+else
+  bg_color_change $BGCOLOR_WARNING
+fi
+
+# SSH Connect
+echo "( $CMD_SSH $1 ...)" >&2
+echo >&2
+$CMD_SSH "$@"
+
+# bgcolor back to normal
+bg_color_normal

@@ -10,9 +10,9 @@ if [ ! -d ~/bin ]; then
   mkdir ~/bin
 fi
 
-for path in `ls -1 bin/*`
+for bin in `ls -1 bin/*`
 do
-  ln -snf $base_dir/$path ~/$path
+  ln -snf $base_dir/$bin ~/$bin
 done
 
 # zsh
