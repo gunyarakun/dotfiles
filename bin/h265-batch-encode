@@ -1,0 +1,25 @@
+#!/usr/bin/ruby
+require 'open3'
+require 'json'
+
+Dir.glob("**/*") do |f|
+  ext = File.extname(f).downcase.intern
+  case ext
+  when :'.mp4'
+    o, e, s = Open3.capture3("ffprobe", "-i", f, "-show_streams", "-print_format", "json")
+    next unless s.success?
+    probe = JSON.parse(o)
+    hevc = false
+    probe['streams'].each do |stream|
+      hevc = true if stream['codec_name'] == 'hevc'
+    end
+    next if hevc
+
+    base = File.basename(f, '.*')
+    tempf = base + '.h265.temp.mp4'
+
+    if system('ffmpeg', '-i', f, '-vcodec', 'libx265', tempf)
+      File.rename(tempf, f)
+    end
+  end
+end
