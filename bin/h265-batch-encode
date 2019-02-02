@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 require 'open3'
 require 'json'
+require 'fileutils'
 
 Dir.glob("**/*") do |f|
   ext = File.extname(f).downcase.intern
@@ -19,6 +20,17 @@ Dir.glob("**/*") do |f|
     tempf = base + '.h265.temp.mp4'
 
     if system('ffmpeg', '-i', f, '-vcodec', 'libx265', tempf)
+      stat = File::Stat.new(f)
+
+      begin
+        birthtime = stat.birthtime
+      rescue NotImplementedError => e
+        birthtime = stat.mtime
+      end
+
+      touch_time = birthtime.strftime("%Y%m%d%H%M.%S")
+      system('touch', '-t', touch_time, tempf)
+
       File.rename(tempf, f)
     end
   end
