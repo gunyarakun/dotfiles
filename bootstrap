@@ -54,3 +54,9 @@ ln -snf $base_dir/git/gitconfig ~/.gitconfig
 # vim
 ln -snf $base_dir/vim/vimrc ~/.vimrc
 ln -snf $base_dir/vim/vim ~/.vim
+
+# starship
+mkdir -p ~/.config
+if [ ! -f ~/.config/starship.toml ]; then
+  ln -snf $base_dir/starship.toml ~/.config
+fi
