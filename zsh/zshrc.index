@@ -13,6 +13,7 @@ source ~/.zsh/zsh/zshrc.docker
 source ~/.zsh/zsh/zshrc.vscode
 source ~/.zsh/zsh/zshrc.peco
 source ~/.zsh/zsh/zshrc.rust
+source ~/.zsh/zsh/zshrc.starship
 
 # load pure theme
 autoload -U promptinit && promptinit
