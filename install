@@ -23,9 +23,7 @@ case $uname in
       ripgrep \
       fd \
       coreutils bvi jq ngrep wrk bat autossh
-    brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype \
-      --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus \
-      --with-x265 --with-webp
+    brew install ffmpeg
     ;;
   Linux)
     if [ -f /etc/debian_version ]; then
