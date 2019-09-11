@@ -11,12 +11,12 @@ if [ -d /Applications/iTerm.app ]; then
   git clone --depth 1 https://github.com/powerline/fonts.git
   (cd fonts && ./install.sh)
   rm -rf fonts
-  # Set Powerline fonts
+  # Set Powerline fonts, byebye Monaco
   /usr/libexec/PlistBuddy -c \
-    "Set :\"New Bookmarks\":0:\"Normal Font\" \"MesloLGM-RegularForPowerline 12\"" \
+    "Set :\"New Bookmarks\":0:\"Normal Font\" \"MesloLGMForPowerline-Regular 12\"" \
     ~/Library/Preferences/com.googlecode.iterm2.plist
   /usr/libexec/PlistBuddy -c \
-    "Set :\"New Bookmarks\":0:\"Non Ascii Font\" \"MesloLGM-RegularForPowerline 12\"" \
+    "Set :\"New Bookmarks\":0:\"Non Ascii Font\" \"MesloLGMForPowerline-Regular 12\"" \
     ~/Library/Preferences/com.googlecode.iterm2.plist
   # Install color schemas
   set +e
