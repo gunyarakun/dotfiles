@@ -51,6 +51,11 @@ if [ -d ~/.nvm ]; then
   rm -rf ~/.nvm
 fi
 
+# JDK
+if [ ! -d ~/.jenv ]; then
+  mkdir -p ~/.jenv/versions
+fi
+
 cat <<INSTRUCTION
 Reload shell execute langenv-install
 INSTRUCTION
