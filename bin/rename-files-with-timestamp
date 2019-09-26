@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+require 'fileutils'
+
+Dir.glob("**/*") do |f|
+  ext = File.extname(f).downcase.intern
+  case ext
+  when :'.mp4'
+    stat = File::Stat.new(f)
+
+    begin
+      birthtime = stat.birthtime
+    rescue NotImplementedError => e
+      birthtime = stat.mtime
+    end
+
+    datetime_prefix = birthtime.strftime('%Y%m%d-%H%M%S-')
+    unless f.start_with?(datetime_prefix)
+      File.rename(f, "#{datetime_prefix}#{f}")
+    end
+  end
+end
