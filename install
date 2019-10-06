@@ -12,8 +12,9 @@ case $uname in
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
     brew update
-    brew install vim --with-python@2
     brew install \
+      vim \
+      ffmpeg \
       git zsh \
       zlib openssl sqlite libxml2 libxslt \
       gdbm readline \
@@ -25,7 +26,8 @@ case $uname in
       coreutils bvi jq ngrep wrk bat autossh \
       direnv jenv \
       starship
-    brew install ffmpeg
+    brew cask install \
+      r-app rstudio
     ;;
   Linux)
     if [ -f /etc/debian_version ]; then
@@ -38,9 +40,11 @@ case $uname in
         bison libreadline6-dev libyaml-dev libncurses5-dev \
         bvi jq ngrep autossh \
         direnv jenv \
-        starship
+        starship \
+        r-base
       sudo aptitude install language-pack-en language-pack-ja || echo "not found language packs"
       # TODO: add ripgrep/fd/cheat/wrk/bat when added
+      # TODO: install RStudio
     elif [ -f /etc/redhat-release ]; then
       sudo yum update
       sudo yum groupinstall "Development Tools"
