@@ -6,7 +6,7 @@ require 'fileutils'
 Dir.glob("**/*") do |f|
   ext = File.extname(f).downcase.intern
   case ext
-  when :'.mp4', :'.avi'
+  when :'.mp4', :'.avi', :'.mov'
     o, e, s = Open3.capture3("ffprobe", "-i", f, "-show_streams", "-print_format", "json")
     next unless s.success?
     probe = JSON.parse(o)
@@ -18,6 +18,7 @@ Dir.glob("**/*") do |f|
 
     base = File.basename(f, '.*')
     tempf = base + '.h265.temp.mp4'
+    targetf = base + '.h265.mp4'
 
     if system('ffmpeg', '-i', f, '-vcodec', 'libx265', tempf)
       stat = File::Stat.new(f)
@@ -31,7 +32,7 @@ Dir.glob("**/*") do |f|
       touch_time = birthtime.strftime("%Y%m%d%H%M.%S")
       system('touch', '-t', touch_time, tempf)
 
-      File.rename(tempf, f)
+      File.rename(tempf, targetf)
     end
   end
 end
