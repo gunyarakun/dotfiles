@@ -5,6 +5,9 @@ require 'fileutils'
 
 Dir.glob("**/*") do |f|
   ext = File.extname(f).downcase.intern
+
+  puts f
+  puts ext
   case ext
   when :'.mp4', :'.avi', :'.mov'
     o, e, s = Open3.capture3("ffprobe", "-i", f, "-show_streams", "-print_format", "json")
@@ -14,11 +17,16 @@ Dir.glob("**/*") do |f|
     probe['streams'].each do |stream|
       hevc = true if stream['codec_name'] == 'hevc'
     end
+    puts "henv" if hevc
     next if hevc
 
     base = File.basename(f, '.*')
     tempf = base + '.h265.temp.mp4'
     targetf = base + '.h265.mp4'
+
+    puts '*' * 80
+    puts tempf
+    puts targetf
 
     if system('ffmpeg', '-i', f, '-vcodec', 'libx265', tempf)
       stat = File::Stat.new(f)
@@ -33,6 +41,7 @@ Dir.glob("**/*") do |f|
       system('touch', '-t', touch_time, tempf)
 
       File.rename(tempf, targetf)
+      File.delete(f)
     end
   end
 end
