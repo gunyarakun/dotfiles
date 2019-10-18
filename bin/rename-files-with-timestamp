@@ -4,7 +4,7 @@ require 'fileutils'
 Dir.glob("**/*") do |f|
   ext = File.extname(f).downcase.intern
   case ext
-  when :'.mp4'
+  when :'.mp4', :'.mov'
     stat = File::Stat.new(f)
 
     begin
