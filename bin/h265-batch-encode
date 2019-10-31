@@ -35,6 +35,9 @@ Dir.glob("**/*") do |f|
       system('touch', '-t', touch_time, tempf)
 
       File.rename(tempf, targetf)
+
+      system('touch', '-t', touch_time, targetf)
+
       File.delete(f)
     else
       File.delete(tempf)
