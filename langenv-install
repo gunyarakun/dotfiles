@@ -37,6 +37,6 @@ fi
 # Node.js
 (cd ~/.nodenv && git pull)
 (cd ~/.nodenv/plugins/node-build && git pull)
-if [ ! -d ~/.nodenv/versions/10.16.3 ]; then
-  nodenv install 10.16.3
+if [ ! -d ~/.nodenv/versions/12.13.0 ]; then
+  nodenv install 12.13.0
 fi

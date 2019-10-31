@@ -23,6 +23,7 @@ Dir.glob("**/*") do |f|
     base = File.basename(f, '.*')
     tempf = base + '.h265.temp.mp4'
     targetf = base + '.h265.mp4'
+    # TODO: check targetf existence
 
     puts '*' * 80
     puts tempf
