@@ -19,6 +19,7 @@ Dir.glob("**/*") do |f|
     base = File.basename(f, '.*')
     tempf = base + '.h265.temp.mp4'
     targetf = base + '.h265.mp4'
+    # TODO: check targetf existence
 
     if system('ffmpeg', '-i', f, '-vcodec', 'libx265', tempf)
       stat = File::Stat.new(f)
@@ -33,6 +34,7 @@ Dir.glob("**/*") do |f|
       system('touch', '-t', touch_time, tempf)
 
       File.rename(tempf, targetf)
+      File.delete(f)
     end
   end
 end
