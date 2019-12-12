@@ -15,7 +15,6 @@ Dir.glob("**/*") do |f|
     probe['streams'].each do |stream|
       hevc = true if stream['codec_name'] == 'hevc'
     end
-    puts "henv" if hevc
     next if hevc
 
     base = File.join(File.dirname(f), File.basename(f, '.*'))
