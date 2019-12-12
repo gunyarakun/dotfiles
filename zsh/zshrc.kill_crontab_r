@@ -1,0 +1,11 @@
+# from: https://qiita.com/kawaz/items/1620300551b5b3f2eccc
+function crontab() {
+  local opt
+  for opt in "$@"; do
+    if [[ $opt == -r ]]; then
+      echo 'crontab -r is sealed!'
+      return 1
+    fi
+  done
+  command crontab "$@"
+}
