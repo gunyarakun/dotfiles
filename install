@@ -8,6 +8,7 @@ uname=`uname`
 case $uname in
   Darwin)
     # TODO: check whether Xcode is installed or not
+    # TODO: Use Brewfile ref.) https://www.karakaram.com/how-to-automate-your-mac-set-up
     if [ ! -d /usr/local/Homebrew ]; then
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
