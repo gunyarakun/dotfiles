@@ -15,6 +15,7 @@ source ~/.zsh/zsh/zshrc.peco
 source ~/.zsh/zsh/zshrc.rust
 source ~/.zsh/zsh/zshrc.starship
 source ~/.zsh/zsh/zshrc.kill_crontab_r
+source ~/.zsh/zsh/zshrc.android
 
 autoload -U promptinit && promptinit
 
