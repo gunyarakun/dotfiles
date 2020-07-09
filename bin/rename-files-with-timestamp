@@ -6,16 +6,15 @@ Dir.glob("**/*") do |f|
   case ext
   when :'.mp4', :'.mov'
     stat = File::Stat.new(f)
+    mtime = stat.mtime
 
-    begin
-      birthtime = stat.birthtime
-    rescue NotImplementedError => e
-      birthtime = stat.mtime
-    end
+    dir = File.dirname(f)
+    name = File.basename(f)
 
-    datetime_prefix = birthtime.strftime('%Y%m%d-%H%M%S-')
-    unless f.start_with?(datetime_prefix)
-      File.rename(f, "#{datetime_prefix}#{f}")
+    datetime_prefix = mtime.strftime('%Y%m%d-%H%M%S-')
+
+    unless name.start_with?(datetime_prefix)
+      File.rename(File.join(dir, name), File.join(dir, datetime_prefix + name))
     end
   end
 end
