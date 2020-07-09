@@ -11,10 +11,14 @@ Dir.glob("**/*") do |f|
     dir = File.dirname(f)
     name = File.basename(f)
 
-    datetime_prefix = mtime.strftime('%Y%m%d-%H%M%S-')
+    basename = name
 
-    unless name.start_with?(datetime_prefix)
-      File.rename(File.join(dir, name), File.join(dir, datetime_prefix + name))
+    # To fix old bug in this script
+    # basename = name.gsub(/\A(\d{8}-\d{6}-)+/, '')
+
+    unless name.start_with?(/\d{8}-\d{6}-/)
+      datetime_prefix = mtime.strftime('%Y%m%d-%H%M%S-')
+      File.rename(File.join(dir, name), File.join(dir, datetime_prefix + basename))
     end
   end
 end
