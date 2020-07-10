@@ -4,10 +4,12 @@
 [include]
   path = .gitconfig.local
 [core]
-  pager = less -R
+  pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
   editor = vim
   excludesfile = $HOME/.gitignore_global
   precomposeUnicode = true
+[interactive]
+  diffFilter = delta --color-only
 [color]
   ui = auto
 [push]
