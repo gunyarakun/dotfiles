@@ -8,19 +8,16 @@ export PATH=~/.pyenv/bin:~/.rbenv/bin:~/.plenv/bin:~/.nodenv/bin:${PATH}
 (cd ~/.pyenv && git pull)
 
 PYTHON_CONFIGURE_OPTS="--enable-shared"
-if [ ! -d ~/.pyenv/versions/2.7.16 ]; then
-  pyenv install 2.7.16
-fi
-if [ ! -d ~/.pyenv/versions/3.7.4 ]; then
-  pyenv install 3.7.4
+if [ ! -d ~/.pyenv/versions/3.8.5 ]; then
+  pyenv install 3.8.5
 fi
 pyenv rehash
 
 # ruby
 (cd ~/.rbenv && git pull)
 (cd ~/.rbenv/plugins/ruby-build && git pull)
-if [ ! -d ~/.rbenv/versions/2.6.5 ]; then
-  rbenv install 2.6.5
+if [ ! -d ~/.rbenv/versions/2.6.6 ]; then
+  rbenv install 2.6.6
 fi
 echo 'gem: --no-ri --no-rdoc' >> ~/.gemrc # no document
 rbenv rehash
@@ -28,15 +25,15 @@ rbenv rehash
 # perl
 (cd ~/.plenv && git pull)
 (cd ~/.plenv/plugins/perl-build && git pull)
-if [ ! -d ~/.plenv/versions/5.30.0 ]; then
-  plenv install 5.30.0
-  plenv global 5.30.0
+if [ ! -d ~/.plenv/versions/5.32.0 ]; then
+  plenv install 5.32.0
+  plenv global 5.32.0
   plenv install-cpanm
 fi
 
 # Node.js
 (cd ~/.nodenv && git pull)
 (cd ~/.nodenv/plugins/node-build && git pull)
-if [ ! -d ~/.nodenv/versions/12.13.0 ]; then
-  nodenv install 12.13.0
+if [ ! -d ~/.nodenv/versions/12.18.3 ]; then
+  nodenv install 12.18.3
 fi
