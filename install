@@ -28,7 +28,9 @@ case $uname in
       direnv jenv \
       starship \
       git-delta \
-      imagemagick
+      imagemagick \
+      rust \
+      diskonaut
     brew cask install \
       r rstudio
     ;;
