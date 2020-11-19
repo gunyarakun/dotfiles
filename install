@@ -30,7 +30,8 @@ case $uname in
       git-delta \
       imagemagick \
       rust \
-      diskonaut
+      diskonaut \
+      stern k9s
     brew cask install \
       r rstudio
     ;;
