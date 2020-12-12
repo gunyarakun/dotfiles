@@ -31,7 +31,8 @@ case $uname in
       imagemagick \
       rust \
       diskonaut \
-      stern k9s
+      stern k9s \
+      dog
     brew cask install \
       r rstudio
     ;;
