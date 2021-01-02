@@ -4,7 +4,7 @@
 [include]
   path = .gitconfig.local
 [core]
-  pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+  pager = less
   editor = vim
   excludesfile = $HOME/.gitignore_global
   precomposeUnicode = true
