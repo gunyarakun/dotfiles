@@ -1,0 +1,13 @@
+function k() {
+    args=()
+    if [[ -n "${KUBE_CTX}" ]]; then
+        args+=( "--context=${KUBE_CTX}" )
+    fi
+    if [[ -n "${KUBE_NS}" ]]; then
+        args+=( "--namespace=${KUBE_NS}" )
+    fi
+    kubectl "${args[@]}" "${@}"
+}
+
+alias kge="k get"
+alias kde="k describe"
