@@ -8,8 +8,8 @@ export PATH=~/.pyenv/bin:~/.rbenv/bin:~/.plenv/bin:~/.nodenv/bin:${PATH}
 (cd ~/.pyenv && git pull)
 
 PYTHON_CONFIGURE_OPTS="--enable-shared"
-if [ ! -d ~/.pyenv/versions/3.8.5 ]; then
-  pyenv install 3.8.5
+if [ ! -d ~/.pyenv/versions/3.8.7 ]; then
+  pyenv install 3.8.7
 fi
 pyenv rehash
 
@@ -34,6 +34,6 @@ fi
 # Node.js
 (cd ~/.nodenv && git pull)
 (cd ~/.nodenv/plugins/node-build && git pull)
-if [ ! -d ~/.nodenv/versions/12.18.3 ]; then
-  nodenv install 12.18.3
+if [ ! -d ~/.nodenv/versions/14.15.4 ]; then
+  nodenv install 14.15.4
 fi
