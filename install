@@ -35,7 +35,8 @@ case $uname in
       stern k9s \
       dog \
       cheat navi tldr \
-      xsv
+      xsv \
+      pastel
     brew cask install \
       r rstudio
     ;;
@@ -62,6 +63,7 @@ case $uname in
       # TODO: install cheat/navi/tldr
       # TODO: install dust/diskonaut
       # TODO: install xsv
+      # TODO: install pastel
     elif [ -f /etc/redhat-release ]; then
       sudo yum update
       sudo yum groupinstall "Development Tools"
