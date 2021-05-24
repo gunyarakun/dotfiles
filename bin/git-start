@@ -5,3 +5,4 @@ git init
 tree_hash=$(git write-tree)
 commit_hash=$(echo "$msg" | git commit-tree $tree_hash)
 echo $commit_hash > .git/refs/heads/main
+git checkout main
