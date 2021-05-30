@@ -27,18 +27,6 @@ if [ -d ~/.rvm ]; then
   rvm implode
 fi
 
-# perl
-if [ ! -d ~/.plenv ]; then
-  git clone git://github.com/tokuhirom/plenv.git ~/.plenv
-fi
-if [ ! -d ~/.plenv/plugins/perl-build ]; then
-  git clone git://github.com/tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build/
-fi
-# good bye perlbrew
-if [ -d ~/.perlbrew ]; then
-  rm -rf ~/.perlbrew
-fi
-
 # Node.js
 if [ ! -d ~/.nodenv ]; then
   git clone git://github.com/nodenv/nodenv.git ~/.nodenv
