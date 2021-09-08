@@ -12,19 +12,27 @@ Dir.glob("**/*") do |f|
     next unless s.success?
     probe = JSON.parse(o)
     hevc = false
+    aac = false
     probe['streams'].each do |stream|
       hevc = true if stream['codec_name'] == 'hevc'
+      aac = true if stream['codec_name'] == 'aac'
+    end
+
+    if hevc and ext == :'.mp4'
+      puts "#{f}: Skip because hevc/mp4"
+      next
     end
 
     if hevc
-      if ext == :'.mp4'
-        puts "#{f}: Skip because hevc/mp4"
-        next
-      else
-        options = ['-vcodec', 'copy', '-acodec', 'copy'] # without encoding
-      end
+      options = ['-vcodec', 'copy'] # without encoding
     else
-      options = ['-vcodec', 'libx265', '-acodec', 'copy']
+      options = ['-vcodec', 'libx265']
+    end
+
+    if aac
+      options += ['-acodec', 'copy'] # without encoding
+    else
+      options += ['-acodec', 'aac']
     end
 
     base = File.join(File.dirname(f), File.basename(f, '.*'))
