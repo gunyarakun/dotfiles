@@ -15,13 +15,24 @@ Dir.glob("**/*") do |f|
     probe['streams'].each do |stream|
       hevc = true if stream['codec_name'] == 'hevc'
     end
-    next if hevc
+
+    if hevc
+      if ext == :'.mp4'
+        puts "#{f}: Skip because hevc/mp4"
+        next
+      else
+        options = ['-vcodec', 'copy', '-acodec', 'copy'] # without encoding
+      end
+    else
+      options = ['-vcodec', 'libx265', '-acodec', 'copy']
+    end
 
     base = File.join(File.dirname(f), File.basename(f, '.*'))
     tempf = base + '.h265.temp.mp4'
     targetf = base + '.h265.mp4'
 
-    if system('ffmpeg', '-i', f, '-vcodec', 'libx265', tempf)
+    puts "#{f}: #{options}"
+    if system('ffmpeg', '-i', f, *options, tempf)
       stat = File::Stat.new(f)
 
       begin
