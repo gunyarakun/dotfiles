@@ -29,3 +29,5 @@
 	smudge = git-media-smudge %f
 [ghq]
 	root = ~/dev/src
+[init]
+	defaultBranch = main
