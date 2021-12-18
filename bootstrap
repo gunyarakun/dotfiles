@@ -51,12 +51,20 @@ fi
 # git
 ln -snf $base_dir/git/gitconfig ~/.gitconfig
 
-# vim
-ln -snf $base_dir/vim/vimrc ~/.vimrc
-ln -snf $base_dir/vim/vim ~/.vim
-
 # starship
 mkdir -p ~/.config
 if [ ! -f ~/.config/starship.toml ]; then
   ln -snf $base_dir/starship.toml ~/.config
 fi
+
+# vim
+if [ ! -d ~/.cache/dein ]; then
+  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+  sh ./installer.sh ~/.cache/dein
+  rm ./installer.sh
+
+  echo "Execute in Vim:"
+  echo ":call dein#install()"
+fi
+ln -snf $base_dir/vim/vimrc ~/.vimrc
+ln -snf $base_dir/vim/vim ~/.vim

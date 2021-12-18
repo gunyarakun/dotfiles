@@ -16,10 +16,6 @@ on_ft = ['markdown']
 
 [[plugins]]
 repo = 'kannokanno/previm'
-on_ft = ['markdown']
-
-[[plugins]]
-repo = 'kannokanno/previm'
 depends = ['open-browser.vim']
 on_ft = ['markdown']
 hook_source = ''' " {{{

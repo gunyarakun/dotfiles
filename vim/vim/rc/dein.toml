@@ -1,6 +1,3 @@
-[[plugins]]
-repo = 'Shougo/dein.vim'
-
 # EditorConfig
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
