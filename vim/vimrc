@@ -102,3 +102,6 @@ let g:hl_matchit_hl_groupname = 'Search'
 " filetype
 filetype plugin indent on
 syntax enable
+
+" Use new regular expression engine
+set re=0

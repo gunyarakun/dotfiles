@@ -50,10 +50,6 @@ repo = 'Shougo/vimshell'
 [[plugins]]
 repo = 'vim-scripts/surround.vim'
 
-# comment out with '\\'
-[[plugins]]
-repo = 'tpope/vim-commentary'
-
 # handle lines with same indent spaces as text object with 'ai'/'ii'
 [[plugins]]
 repo = 'kana/vim-textobj-user'

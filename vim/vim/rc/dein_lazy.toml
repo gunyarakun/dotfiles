@@ -5,10 +5,6 @@ repo = 'Shougo/unite.vim'
 repo = 'Shougo/neomru.vim'
 on_source = ['unite.vim']
 
-[[plugins]]
-repo = 'pangloss/vim-javascript'
-on_ft = ['javascript']
-
 # Markdown
 [[plugins]]
 repo = 'tyru/open-browser.vim'
@@ -27,44 +23,6 @@ hook_source = ''' " {{{
 repo = 'joker1007/vim-markdown-quote-syntax'
 on_ft = ['markdown']
 
-# go
-repo = 'fatih/vim-go'
-on_ft = ['go']
-hook_source = ''' " {{{
-    let g:go_fmt_autosave = 1
-    let g:syntastic_go_checkers = ['go', 'govet', 'errcheck']
-    let g:syntastic_aggregate_errors = 1
-''' # }}}
-
-repo = 'dgryski/vim-godef'
-on_ft = ['go']
-hook_source = '''
-  let g:godef_split = 2
-'''
-
-# rust
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = ['rust']
-build = 'cargo install rustfmt'
-hook_source = '''
-  let g:rustfmt_autosave = 1
-  let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
-'''
-
-[[plugins]]
-repo = 'racer-rust/vim-racer'
-on_ft = ['rust']
-build = 'cargo install racer'
-hook_source = '''
-  set hidden
-  let g:racer_cmd = '$HOME/.cargo/bin/racer'
-'''
-
-# rails
-[[plugins]]
-repo = 'tpope/vim-rails'
-
 # toml
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -74,11 +32,6 @@ on_ft = ['toml']
 [[plugins]]
 repo = 'chase/vim-ansible-yaml'
 on_ft = ['yaml']
-
-# llvm ir
-[[plugins]]
-repo = 'qnighy/llvm.vim'
-on_ft = ['llvm']
 
 # html5
 [[plugins]]
@@ -90,13 +43,30 @@ on_ft = ['html']
 repo = 'ap/vim-css-color'
 on_ft = ['css', 'less', 'sass']
 
+# css syntax
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+on_ft = ['css', 'less', 'sass']
+
 # typescript
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
-on_ft = ['typescript', 'typescript.tsx']
+on_ft = ['typescript', 'typescriptreact']
 
-# typescript with React
+# javascript
 [[plugins]]
-repo = 'peitalin/vim-jsx-typescript'
-depends = ['typescript-vim']
-on_ft = ['typescript', 'typescript.tsx']
+repo = 'othree/yajs.vim'
+on_ft = ['javascript', 'javascriptreact']
+
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = ['javascript', 'javascriptreact']
+
+[[plugins]]
+repo = 'othree/javascript-libraries-syntax.vim'
+on_ft = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact']
+
+# jsx/tsx
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact']
