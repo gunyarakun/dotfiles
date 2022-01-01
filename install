@@ -36,7 +36,8 @@ case $uname in
       dog \
       cheat navi tldr \
       xsv \
-      pastel
+      pastel \
+      youtube-dl yt-dlp
     ;;
   Linux)
     if [ -f /etc/debian_version ]; then
