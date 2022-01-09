@@ -37,7 +37,8 @@ case $uname in
       cheat navi tldr \
       xsv \
       pastel \
-      youtube-dl yt-dlp
+      youtube-dl yt-dlp \
+      rclone
     ;;
   Linux)
     if [ -f /etc/debian_version ]; then
@@ -52,7 +53,8 @@ case $uname in
         direnv jenv \
         starship \
         imagemagick \
-        ripgrep
+        ripgrep \
+        rclone
       sudo aptitude install language-pack-en language-pack-ja || echo "not found language packs"
       # TODO: install fd/wrk/bat
       # TODO: install tokei
