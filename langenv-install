@@ -28,3 +28,4 @@ rbenv rehash
 if [ ! -d ~/.nodenv/versions/16.13.2 ]; then
   nodenv install 16.13.2
 fi
+nodenv rehash
