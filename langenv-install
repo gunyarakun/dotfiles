@@ -8,16 +8,16 @@ export PATH=~/.pyenv/bin:~/.rbenv/bin:~/.plenv/bin:~/.nodenv/bin:${PATH}
 (cd ~/.pyenv && git pull)
 
 PYTHON_CONFIGURE_OPTS="--enable-shared"
-if [ ! -d ~/.pyenv/versions/3.9.5 ]; then
-  pyenv install 3.9.5
+if [ ! -d ~/.pyenv/versions/3.9.10 ]; then
+  pyenv install 3.9.10
 fi
 pyenv rehash
 
 # ruby
 (cd ~/.rbenv && git pull)
 (cd ~/.rbenv/plugins/ruby-build && git pull)
-if [ ! -d ~/.rbenv/versions/3.0.1 ]; then
-  rbenv install 3.0.1
+if [ ! -d ~/.rbenv/versions/3.0.3 ]; then
+  rbenv install 3.0.3
 fi
 echo 'gem: --no-ri --no-rdoc' >> ~/.gemrc # no document
 rbenv rehash
@@ -25,6 +25,6 @@ rbenv rehash
 # Node.js
 (cd ~/.nodenv && git pull)
 (cd ~/.nodenv/plugins/node-build && git pull)
-if [ ! -d ~/.nodenv/versions/14.17.0 ]; then
-  nodenv install 14.17.0
+if [ ! -d ~/.nodenv/versions/16.13.2 ]; then
+  nodenv install 16.13.2
 fi
