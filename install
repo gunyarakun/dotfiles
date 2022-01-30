@@ -10,7 +10,7 @@ case $uname in
     # TODO: check whether Xcode is installed or not
     # TODO: Use Brewfile ref.) https://www.karakaram.com/how-to-automate-your-mac-set-up
     if [ ! -d /usr/local/Homebrew ]; then
-      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
     fi
     eval "$(/opt/homebrew/bin/brew shellenv)"
