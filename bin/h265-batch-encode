@@ -7,7 +7,7 @@ Dir.glob("**/*") do |f|
   ext = File.extname(f).downcase.intern
 
   case ext
-  when :'.mp4', :'.avi', :'.mov'
+  when :'.mp4', :'.avi', :'.mov', :'.mkv'
     o, e, s = Open3.capture3("ffprobe", "-i", f, "-show_streams", "-print_format", "json")
     next unless s.success?
     probe = JSON.parse(o)
