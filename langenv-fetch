@@ -4,21 +4,21 @@ set -e -u
 
 # python
 if [ ! -d ~/.pyenv ]; then
-  git clone git://github.com/yyuu/pyenv.git ~/.pyenv
-  git clone git://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+  git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+  git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 fi
 
 # ruby
 if [ ! -d ~/.rbenv ]; then
-  git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
-  git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
   mkdir -p ~/.rbenv/plugins
 
   # rbenv-binstubs
-  git clone git://github.com/ianheggie/rbenv-binstubs.git ~/.rbenv/plugins/rbenv-binstubs
+  git clone https://github.com/ianheggie/rbenv-binstubs.git ~/.rbenv/plugins/rbenv-binstubs
   # rbenv-gemset
-  git clone git://github.com/jf/rbenv-gemset.git ~/.rbenv/plugins/rbenv-gemset
+  git clone https://github.com/jf/rbenv-gemset.git ~/.rbenv/plugins/rbenv-gemset
 fi
 # good bye rvm
 if [ -d ~/.rvm ]; then
@@ -27,10 +27,10 @@ fi
 
 # Node.js
 if [ ! -d ~/.nodenv ]; then
-  git clone git://github.com/nodenv/nodenv.git ~/.nodenv
+  git clone https://github.com/nodenv/nodenv.git ~/.nodenv
 fi
 if [ ! -d ~/.nodenv/plugins/node-build ]; then
-  git clone git://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
+  git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
 fi
 # good bye nvm
 if [ -d ~/.nvm ]; then
