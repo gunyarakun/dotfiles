@@ -24,7 +24,7 @@ case $uname in
       bison libyaml ncurses \
       go \
       ghq peco \
-      ripgrep \
+      ripgrep rga \
       fd \
       coreutils bvi jq ngrep wrk bat autossh \
       tokei \
@@ -67,6 +67,7 @@ case $uname in
       # TODO: install dust/diskonaut
       # TODO: install xsv
       # TODO: install pastel
+      # TODO: install rga (ripgrep-all)
     elif [ -f /etc/redhat-release ]; then
       sudo yum update
       sudo yum groupinstall "Development Tools"
