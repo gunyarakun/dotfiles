@@ -26,7 +26,7 @@ case $uname in
       ghq peco \
       ripgrep rga \
       fd \
-      coreutils bvi jq ngrep wrk bat autossh \
+      coreutils bvi jq gron ngrep wrk bat autossh \
       tokei \
       direnv jenv \
       starship \
@@ -52,7 +52,7 @@ case $uname in
         zlib1g-dev libssl-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev \
         libgdbm-dev libbz2-dev libreadline-dev \
         bison libreadline6-dev libyaml-dev libncurses5-dev \
-        bvi jq ngrep autossh \
+        bvi jq gron ngrep autossh \
         direnv jenv \
         starship \
         imagemagick \
