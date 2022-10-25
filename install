@@ -41,7 +41,8 @@ case $uname in
       pastel \
       youtube-dl yt-dlp \
       rclone \
-      mpv
+      mpv \
+      wezterm
     ;;
   Linux)
     if [ -f /etc/debian_version ]; then
