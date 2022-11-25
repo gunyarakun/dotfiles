@@ -68,6 +68,7 @@ case $uname in
       fi
       eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
       brew update
+      ulimit -n 4096 # ffmpeg installs many packages so we need many file descriptors
       brew install \
         ffmpeg \
         ghq peco \
