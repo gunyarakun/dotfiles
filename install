@@ -54,7 +54,6 @@ case $uname in
         bison libreadline6-dev libyaml-dev libncurses5-dev \
         bvi jq gron ngrep autossh \
         direnv jenv \
-        starship \
         imagemagick \
         ripgrep \
         rclone \
@@ -72,6 +71,7 @@ case $uname in
       brew install \
         ffmpeg \
         ghq peco \
+        starship \
         jenv
       # TODO: install fd/wrk/bat
       # TODO: install tokei
