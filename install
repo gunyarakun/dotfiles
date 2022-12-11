@@ -8,12 +8,11 @@ uname=`uname`
 case $uname in
   Darwin)
     # TODO: check whether Xcode is installed or not
-    # TODO: Use Brewfile ref.) https://www.karakaram.com/how-to-automate-your-mac-set-up
     if [ ! -d /usr/local/Homebrew ]; then
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      echo 'eval "$(/usr/local/bin/brew shellenv)"' >> $HOME/.zprofile
+      echo 'eval "$(/use/local/Homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
     fi
-    eval "$(/usr/local/bin/brew shellenv)"
+    eval "$(/usr/local/Homebrew/bin/brew shellenv)"
     brew update
     brew install \
       vim \
@@ -49,18 +48,31 @@ case $uname in
       sudo apt-get update
       sudo apt-get install aptitude
       sudo aptitude install \
-        build-essential git zsh curl sudo vim \
+        build-essential git zsh curl file sudo vim \
         zlib1g-dev libssl-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev \
         libgdbm-dev libbz2-dev libreadline-dev \
         bison libreadline6-dev libyaml-dev libncurses5-dev \
         bvi jq gron ngrep autossh \
         direnv jenv \
-        starship \
         imagemagick \
         ripgrep \
         rclone \
         mpv
       sudo aptitude install language-pack-en language-pack-ja || echo "not found language packs"
+
+      if [ ! -d /home/linuxbrew ]; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.zprofile
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+      fi
+      eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+      brew update
+      ulimit -n 4096 # ffmpeg installs many packages so we need many file descriptors
+      brew install \
+        ffmpeg \
+        ghq peco \
+        starship \
+        jenv
       # TODO: install fd/wrk/bat
       # TODO: install tokei
       # TODO: install git-delta
