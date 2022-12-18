@@ -13,7 +13,8 @@
 [color]
   ui = auto
 [push]
-  default = tracking
+  default = simple
+  useForceIfIncludes = yes
 [branch]
   autosetuprebase = always
 [merge]
