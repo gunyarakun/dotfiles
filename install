@@ -23,12 +23,14 @@ case $uname in
       bison libyaml ncurses \
       go \
       ghq peco \
+      fig \
       ripgrep rga \
       fd \
       coreutils bvi jq gron ngrep wrk bat autossh \
       tokei \
       direnv jenv \
       starship \
+      exiftool \
       git-delta \
       imagemagick \
       rust \
@@ -71,7 +73,9 @@ case $uname in
       brew install \
         ffmpeg \
         ghq peco \
+        fig \
         starship \
+        exiftool \
         jenv
       # TODO: install fd/wrk/bat
       # TODO: install tokei
