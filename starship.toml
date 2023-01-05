@@ -1,3 +1,7 @@
+[[battery.display]]
+threshold = 30
+style = "bold yellow"
+
 [directory]
-truncate_to_repo = false
 truncation_length = 6
+truncate_to_repo = false
