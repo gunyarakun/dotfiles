@@ -25,6 +25,7 @@ case $uname in
       ghq peco \
       fig \
       ripgrep rga \
+      lsd \
       fd \
       coreutils bvi jq gron ngrep wrk bat autossh \
       tokei \
