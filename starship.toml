@@ -1,6 +1,15 @@
+add_newline = true
+
 [[battery.display]]
 threshold = 30
 style = "bold yellow"
+
+[status]
+style = "red"
+symbol = "🔴"
+format = '[\[$common_meaning$signal_name$maybe_int $status\]]($style) '
+map_symbol = true
+disabled = false
 
 [directory]
 truncation_length = 6
