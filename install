@@ -26,6 +26,7 @@ case $uname in
       fig \
       ripgrep rga \
       lsd \
+      hstr \
       fd \
       coreutils bvi jq gron ngrep wrk bat autossh \
       tokei \
