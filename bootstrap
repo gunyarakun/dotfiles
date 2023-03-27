@@ -68,3 +68,6 @@ if [ ! -d ~/.cache/dein ]; then
 fi
 ln -snf $base_dir/vim/vimrc ~/.vimrc
 ln -snf $base_dir/vim/vim ~/.vim
+
+# wezterm
+./wezterm/setup.sh
