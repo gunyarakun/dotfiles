@@ -71,3 +71,6 @@ ln -snf $base_dir/vim/vim ~/.vim
 
 # wezterm
 ./wezterm/setup.sh
+
+# vscode
+./vscode/setup.sh
