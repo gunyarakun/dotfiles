@@ -15,9 +15,9 @@
   "editor.lineHeight": 0,
   "editor.minimap.enabled": false,
   "editor.quickSuggestions": {
-    "comments": "on",
-    "strings": "on",
-    "other": "on"
+    "other": true,
+    "comments": true,
+    "strings": true
   },
   "editor.renderControlCharacters": true,
   "editor.renderLineHighlight": "all",
@@ -43,6 +43,11 @@
   "github.copilot.advanced": {
   },
   "search.exclude": {
+    "**/Gemfile.lock": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/poetry.lock": true,
+    "**/yarn.lock": true
   },
   "search.showLineNumbers": true,
   "terminal.integrated.env.osx": {
