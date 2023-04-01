@@ -23,7 +23,6 @@ case $uname in
       bison libyaml ncurses \
       go \
       ghq peco \
-      fig \
       ripgrep rga \
       lsd \
       hstr \
@@ -43,9 +42,8 @@ case $uname in
       xsv \
       pastel \
       youtube-dl yt-dlp \
-      rclone \
-      mpv \
-      wezterm
+      rclone
+    brew install --cask fig mpv wezterm visual-studio-code
     ;;
   Linux)
     if [ -f /etc/debian_version ]; then
