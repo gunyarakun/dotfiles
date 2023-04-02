@@ -42,7 +42,8 @@ case $uname in
       xsv \
       pastel \
       youtube-dl yt-dlp \
-      rclone
+      rclone \
+      xpdf
     brew install --cask fig mpv wezterm visual-studio-code
     ;;
   Linux)
