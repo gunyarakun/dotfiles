@@ -11,6 +11,7 @@
   "editor.fontFamily": "UDEV Gothic 35",
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
+  "editor.guides.bracketPairs": true,
   "editor.inlineSuggest.enabled": true,
   "editor.lineHeight": 0,
   "editor.minimap.enabled": false,
@@ -24,6 +25,7 @@
   "editor.renderWhitespace": "all",
   "editor.showFoldingControls": "always",
   "editor.tabSize": 2,
+  "editor.unicodeHighlight.includeComments": true,
   "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?　、。！？「」【】『』（）",
   "editor.wordWrap": "on",
   "explorer.incrementalNaming": "smart",
@@ -53,8 +55,9 @@
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
-  "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.fontSize": 14,
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.tabFocusMode": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.editor.tabSizing": "shrink",
   "workbench.iconTheme": "material-icon-theme",
