@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
+    "mrmlnc.vscode-scss",
+    "oderwat.indent-rainbow",
+    "ryu1kn.partial-diff",
+    "shardulm94.trailing-spaces",
+    "streetsidesoftware.code-spell-checker",
+    "styled-components.vscode-styled-components",
+    "wayou.vscode-todo-highlight",
+    "yzhang.markdown-all-in-one"
+  ]
+}
