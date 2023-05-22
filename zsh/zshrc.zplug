@@ -4,6 +4,7 @@ source "${HOME}/.zplug/init.zsh"
 
 zplug "chrissicool/zsh-256color", use:"zsh-256color.plugin.zsh"
 zplug "zsh-users/zsh-completions", lazy:true
+zplug "zsh-users/zsh-autosuggestions", lazy:true
 
 # zplug "sorin-ionescu/prezto"
 
@@ -17,9 +18,11 @@ zplug "plugins/ruby", from:oh-my-zsh, if:"which ruby", lazy:true
 zplug "themes/robbyrussell", from:oh-my-zsh
 zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]", lazy:true
 
-
 # syntax highlighting
 zplug "zsh-users/zsh-syntax-highlighting"
+
+# hisotry
+zplug "zsh-users/zsh-history-substring-search", lazy:true
 
 if ! zplug check --verbose; then
   zplug install

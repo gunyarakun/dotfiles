@@ -74,5 +74,7 @@
   "[tsv]": {
     "editor.insertSpaces": false,
     "editor.wordWrap": "off"
-  }
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.openRepositoryInParentFolders": "never"
 }
