@@ -8,7 +8,7 @@
   "editor.copyWithSyntaxHighlighting": false,
   "editor.dragAndDrop": false,
   "editor.fontSize": 14,
-  "editor.fontFamily": "UDEV Gothic 35",
+  "editor.fontFamily": "UDEV Gothic 35 JPDOC",
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
   "editor.guides.bracketPairs": true,
@@ -76,5 +76,6 @@
     "editor.wordWrap": "off"
   },
   "security.workspace.trust.untrustedFiles": "open",
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "terminal.integrated.fontFamily": "UDEV Gothic JPDOC"
 }
