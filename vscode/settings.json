@@ -77,5 +77,6 @@
   },
   "security.workspace.trust.untrustedFiles": "open",
   "git.openRepositoryInParentFolders": "never",
-  "terminal.integrated.fontFamily": "UDEV Gothic JPDOC"
+  "terminal.integrated.fontFamily": "UDEV Gothic JPDOC",
+  "workbench.editor.enablePreview": false
 }
