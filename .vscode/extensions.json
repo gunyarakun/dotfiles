@@ -1,5 +1,6 @@
 {
   "recommendations": [
+    "adpyke.codesnap",
     "eamodio.gitlens",
     "editorconfig.editorconfig",
     "mrmlnc.vscode-scss",
