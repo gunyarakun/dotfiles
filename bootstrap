@@ -58,14 +58,6 @@ if [ ! -f ~/.config/starship.toml ]; then
 fi
 
 # vim
-if [ ! -d ~/.cache/dein ]; then
-  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-  sh ./installer.sh ~/.cache/dein
-  rm ./installer.sh
-
-  echo "Execute in Vim:"
-  echo ":call dein#install()"
-fi
 ln -snf $base_dir/vim/vimrc ~/.vimrc
 ln -snf $base_dir/vim/vim ~/.vim
 
