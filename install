@@ -56,7 +56,7 @@ case $uname in
         libgdbm-dev libbz2-dev libreadline-dev \
         bison libreadline6-dev libyaml-dev libncurses5-dev \
         bvi jq gron ngrep autossh \
-        direnv jenv \
+        direnv \
         imagemagick \
         ripgrep \
         rclone \
