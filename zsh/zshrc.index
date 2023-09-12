@@ -17,6 +17,7 @@ source ~/.zsh/zsh/zshrc.starship
 source ~/.zsh/zsh/zshrc.kill_crontab_r
 source ~/.zsh/zsh/zshrc.android
 source ~/.zsh/zsh/zshrc.k8s
+source ~/.zsh/zsh/zshrc.rye
 
 autoload -U promptinit && promptinit
 
