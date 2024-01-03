@@ -43,7 +43,8 @@ case $uname in
       pastel \
       youtube-dl yt-dlp \
       rclone \
-      xpdf
+      xpdf \
+      difftastic
     brew install --cask fig mpv wezterm visual-studio-code
     ;;
   Linux)

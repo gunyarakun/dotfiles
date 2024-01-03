@@ -4,7 +4,6 @@
 [include]
   path = .gitconfig.local
 [core]
-  pager = less
   editor = vim
   excludesfile = $HOME/.gitignore_global
   precomposeUnicode = true
@@ -19,9 +18,17 @@
   autosetuprebase = always
 [merge]
 #  ff = false
+[diff]
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
+[pager]
+  difftool = true
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
