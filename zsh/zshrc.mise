@@ -1,0 +1,4 @@
+# Python, Perl, Ruby and Node
+if type rtx >/dev/null 2>&1; then
+  eval "$(rtx activate zsh)"
+fi

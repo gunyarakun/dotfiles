@@ -1,9 +1,0 @@
-# Python, Perl, Ruby and Node
-typeset -U path
-
-for xenv in pyenv plenv rbenv nodenv jenv; do
-  if [ -d ${HOME}/.$xenv ]; then
-    path=(${HOME}/.$xenv/bin ${HOME}/.$xenv/shims $path)
-    eval "$(SHELL=zsh $xenv init - --no-rehash)"
-  fi
-done

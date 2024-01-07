@@ -1,0 +1,7 @@
+#!/bin/zsh
+# vim: set expandtab ts=2 sw=2 nowrap ft=sh ff=unix : */
+set -e -u
+
+mise install python@3.11
+mise install ruby@3.2
+mise install nodejs@lts

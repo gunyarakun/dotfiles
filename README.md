@@ -15,7 +15,6 @@ cd ~/dotfiles
 
 ```
 cd ~/dotfiles
-./langenv-fetch # installing *env
 source ~/.zshrc
-./langenv-install # installing languages with *env
+./mise-install # installing languages with mise
 ```

@@ -44,7 +44,8 @@ case $uname in
       youtube-dl yt-dlp \
       rclone \
       xpdf \
-      difftastic
+      difftastic \
+      mise
     brew install --cask fig mpv wezterm visual-studio-code
     ;;
   Linux)
