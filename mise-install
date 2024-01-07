@@ -3,5 +3,8 @@
 set -e -u
 
 mise install python@3.11
+mise use --global python@3.11
 mise install ruby@3.2
+mise use --global ruby@3.2
 mise install nodejs@lts
+mise use --global nodejs@lts

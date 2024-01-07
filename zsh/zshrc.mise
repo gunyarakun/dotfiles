@@ -1,4 +1,4 @@
-# Python, Perl, Ruby and Node
-if type rtx >/dev/null 2>&1; then
-  eval "$(rtx activate zsh)"
+# mise
+if type mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
 fi
