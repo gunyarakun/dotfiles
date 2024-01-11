@@ -45,7 +45,8 @@ case $uname in
       xpdf \ # A free PDF viewer and toolkit, including a text extractor, image converter, HTML converter, and more.
       difftastic \ # A structural diff that understands syntax
       mise \ # dev tools, env vars, task runner
-      dive # A tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image
+      dive \ # A tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image
+      eza # A modern, maintained replacement for ls
     brew install --cask fig mpv wezterm visual-studio-code
     ;;
   Linux)
