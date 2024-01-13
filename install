@@ -46,7 +46,9 @@ case $uname in
       difftastic \ # A structural diff that understands syntax
       mise \ # dev tools, env vars, task runner
       dive \ # A tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image
-      eza # A modern, maintained replacement for ls
+      eza \ # A modern, maintained replacement for ls
+      xh \ # Friendly and fast tool for sending HTTP requests
+      aicommits # A CLI that writes your git commit messages for you with AI
     brew install --cask fig mpv wezterm visual-studio-code
     ;;
   Linux)
