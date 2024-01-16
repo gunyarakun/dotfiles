@@ -4,6 +4,7 @@ set -e -u
 
 mise install python@3.11
 mise use --global python@3.11
+curl -sSf https://rye-up.com/get | bash
 mise install ruby@3.2
 mise use --global ruby@3.2
 mise install nodejs@lts
