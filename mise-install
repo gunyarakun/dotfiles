@@ -2,6 +2,12 @@
 # vim: set expandtab ts=2 sw=2 nowrap ft=sh ff=unix : */
 set -e -u
 
+# mise
+if [ ! -f ~/.local/bin/mise ]; then
+  curl https://mise.run | sh
+  eval "$(~/.local/bin/mise activate zsh)"
+fi
+
 mise install python@3.11
 mise use --global python@3.11
 curl -sSf https://rye-up.com/get | bash
