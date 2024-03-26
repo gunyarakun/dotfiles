@@ -80,13 +80,16 @@ case $uname in
         ffmpeg \
         ghq peco \
         fig \
-        starship \
-        exiftool
+        jq autossh \
+        direnv \
+        imagemagick \
+        ripgrep
     elif [ -f /etc/redhat-release ]; then
       sudo yum update
       sudo yum groupinstall "Development Tools"
       sudo yum install git zsh
     fi
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)"
     ;;
   FreeBSD)
     echo "To be implemented"
