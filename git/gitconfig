@@ -1,34 +1,35 @@
 [user]
-  name = Tasuku SUENAGA a.k.a. gunyarakun
-  email = tasuku-s-github@titech.ac
+	name = Tasuku SUENAGA a.k.a. gunyarakun
+	email = tasuku-s-github@titech.ac
 [include]
-  path = .gitconfig.local
+	path = .gitconfig.local
 [core]
-  editor = vim
-  excludesfile = $HOME/.gitignore_global
-  precomposeUnicode = true
+	editor = vim
+	excludesfile = $HOME/.gitignore_global
+	precomposeUnicode = true
 [interactive]
-  diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [color]
-  ui = auto
+	ui = auto
 [push]
-  default = simple
-  useForceIfIncludes = yes
+	default = simple
+	useForceIfIncludes = yes
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
+	sort = -committerdate
 [merge]
-#  ff = false
+#	ff = false
 [diff]
-  tool = difftastic
+	tool = difftastic
 [difftool]
-  prompt = false
+	prompt = false
 [difftool "difftastic"]
-  cmd = difft "$LOCAL" "$REMOTE"
+	cmd = difft "$LOCAL" "$REMOTE"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [pager]
-  difftool = true
+	difftool = true
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -44,3 +45,7 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[rerere]
+	enabled = true
+[alias]
+	pushfwl = push --force-with-lease

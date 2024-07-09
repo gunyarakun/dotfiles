@@ -50,6 +50,7 @@ fi
 
 # git
 ln -snf $base_dir/git/gitconfig ~/.gitconfig
+ln -snf $base_dir/git/gitignore_global ~/.gitignore_global
 
 # starship
 mkdir -p ~/.config
