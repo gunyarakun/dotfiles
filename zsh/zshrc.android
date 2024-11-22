@@ -3,5 +3,11 @@ case ${OSTYPE} in
     if [ -d "$HOME/Library/Android/sdk/platform-tools" ]; then
       export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
     fi
+
+    # studio
+    if [ -d "/Applications/Android Studio.app/Contents/MacOS" ]; then
+      export PATH=$PATH:"/Applications/Android Studio.app/Contents/MacOS"
+    fi
+
     ;;
 esac
