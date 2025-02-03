@@ -49,7 +49,8 @@ case $uname in
       eza `# A modern, maintained replacement for ls` \
       xh `# Friendly and fast tool for sending HTTP requests` \
       aicommits `# A CLI that writes your git commit messages for you with AI` \
-      ncdu `# A disk usage analyzer with an ncurses interface`
+      ncdu `# A disk usage analyzer with an ncurses interface` \
+      mupdf-tools `#Lightweight PDF and XPS viewer`
     brew install --cask fig mpv wezterm visual-studio-code
     ;;
   Linux)
