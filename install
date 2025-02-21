@@ -13,45 +13,9 @@ case $uname in
       open "https://brew.sh/"
       exit
     fi
-    brew update
-    brew install \
-      vim \
-      ffmpeg \
-      git zsh \
-      zlib openssl sqlite libxml2 libxslt \
-      gdbm readline \
-      bison libyaml ncurses \
-      go \
-      ghq peco \
-      ripgrep rga \
-      lsd \
-      hstr \
-      fd \
-      coreutils bvi jq gron ngrep wrk bat autossh \
-      tokei `# Count your code, quickly` \
-      direnv \
-      starship \
-      exiftool \
-      imagemagick \
-      rust \
-      dust diskonaut `# A more intuitive version of du in rust, Terminal disk space navigator` \
-      stern k9s `# Multi pod and container log tailing for Kubernetes, Kubernetes CLI To Manage Your Clusters In Style!` \
-      dog `# A command-line DNS client` \
-      cheat navi tldr `# Cheetsheets` \
-      xsv `# A command line program for indexing, slicing, analyzing, splitting and joining CSV files` \
-      pastel `# A command-line tool to generate, analyze, convert and manipulate colors` \
-      youtube-dl yt-dlp `# YouTube and other sites downloaders` \
-      rclone `# Rclone syncs your files to cloud storage` \
-      xpdf `# A free PDF viewer and toolkit, including a text extractor, image converter, HTML converter, and more.` \
-      difftastic `# A structural diff that understands syntax` \
-      mise `# dev tools, env vars, task runner` \
-      dive `# A tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image` \
-      eza `# A modern, maintained replacement for ls` \
-      xh `# Friendly and fast tool for sending HTTP requests` \
-      aicommits `# A CLI that writes your git commit messages for you with AI` \
-      ncdu `# A disk usage analyzer with an ncurses interface` \
-      mupdf-tools `#Lightweight PDF and XPS viewer`
-    brew install --cask fig mpv wezterm visual-studio-code
+    brew bundle
+    brew tap homebrew/autoupdate
+    brew autoupdate start --upgrade --clean
     ;;
   Linux)
     if [ -f /etc/debian_version ]; then
