@@ -17,6 +17,9 @@ cask 'docker'
 # Control your tools with a few keystrokes
 cask 'raycast'
 
+# Video chat, voice call and instant messaging application
+cask 'skype'
+
 # Team communication and collaboration software
 cask 'slack'
 
