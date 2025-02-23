@@ -11,8 +11,20 @@ cask '1password-cli'
 # Enable Windows-like alt-tab
 cask 'alt-tab'
 
+# Japanese input method editor (IME) produced by JustSystems
+cask 'atok'
+
+# Voice and text chat software
+cask 'discord'
+
 # App to build and share containerised applications and microservices
 cask 'docker'
+
+# Web browser
+cask 'google-chrome'
+
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask 'google-cloud-sdk'
 
 # Control your tools with a few keystrokes
 cask 'raycast'
@@ -29,8 +41,14 @@ cask 'session-manager-plugin'
 # Open-source code editor
 cask 'visual-studio-code'
 
+# Multimedia player
+cask 'vlc'
+
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask 'wezterm'
+
+# Video communication and virtual meeting platform
+cask 'zoom'
 
 # -----------------------------------'
 # Installing formulae...
