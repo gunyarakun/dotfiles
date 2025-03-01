@@ -20,6 +20,12 @@ cask 'discord'
 # App to build and share containerised applications and microservices
 cask 'docker'
 
+# Client for the Dropbox cloud storage service
+cask 'dropbox'
+
+# UI toolkit for building applications for mobile, web and desktop
+cask 'flutter'
+
 # Web browser
 cask 'google-chrome'
 
@@ -75,6 +81,9 @@ brew 'berkeley-db'
 # Parser generator
 brew 'bison'
 
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew 'btop'
+
 # Vi-like binary file (hex) editor
 brew 'bvi'
 
@@ -83,6 +92,9 @@ brew 'cheat'
 
 # GNU File, Shell, and Text utilities
 brew 'coreutils'
+
+# Top-like interface for container metrics
+brew 'ctop'
 
 # Diff that understands syntax
 brew 'difftastic'
@@ -98,9 +110,6 @@ brew 'dive'
 
 # Text processing system for reStructuredText
 brew 'docutils'
-
-# Command-line DNS client
-brew 'dog'
 
 # SOCKS client wrapper for *BSD/macOS
 brew 'dsocks'
@@ -198,6 +207,9 @@ brew 'ncdu'
 # Network grep
 brew 'ngrep'
 
+# HTTP load generator, inspired by rakyll/hey with tui animation
+brew 'oha'
+
 # Open client for Cisco AnyConnect VPN
 brew 'openconnect'
 
@@ -266,9 +278,6 @@ brew 'xpdf'
 
 # Fast CSV toolkit written in Rust
 brew 'xsv'
-
-# Download YouTube videos from the command-line
-brew 'youtube-dl'
 
 # Feature-rich command-line audio/video downloader
 brew 'yt-dlp'
