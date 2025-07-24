@@ -132,9 +132,6 @@ brew 'ffmpeg'
 # Command-line downloader for image-hosting site galleries and collections
 brew 'gallery-dl'
 
-# Remote repository management made easy
-brew 'ghq'
-
 # Distributed revision control system
 brew 'git'
 
@@ -215,9 +212,6 @@ brew 'pastel'
 
 # PDF processor written in Go
 brew 'pdfcpu'
-
-# Simplistic interactive filtering tool
-brew 'peco'
 
 # Parallel versions of OpenSSH and related tools
 brew 'pssh'

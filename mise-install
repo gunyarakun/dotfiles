@@ -15,3 +15,8 @@ mise install ruby@3.4
 mise use --global ruby@3.4
 mise install nodejs@lts
 mise use --global nodejs@lts
+# Install ghq and peco
+mise install ghq
+mise use ghq
+mise install peco
+mise use peco
