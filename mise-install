@@ -17,6 +17,6 @@ mise install nodejs@lts
 mise use --global nodejs@lts
 # Install ghq and peco
 mise install ghq
-mise use ghq
+mise use --global ghq
 mise install peco
-mise use peco
+mise use --global peco
