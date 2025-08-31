@@ -67,3 +67,6 @@ ln -snf $base_dir/vim/vim ~/.vim
 
 # vscode
 ./vscode/setup.sh
+
+# claude
+./claude/setup.sh
