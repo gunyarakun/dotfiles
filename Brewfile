@@ -132,6 +132,9 @@ brew 'ffmpeg'
 # Command-line downloader for image-hosting site galleries and collections
 brew 'gallery-dl'
 
+# GitHub command-line tool
+brew 'gh'
+
 # Distributed revision control system
 brew 'git'
 
