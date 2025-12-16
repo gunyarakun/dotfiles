@@ -219,6 +219,9 @@ brew 'pastel'
 # PDF processor written in Go
 brew 'pdfcpu'
 
+# Modern replacement for ps written in Rust
+brew 'procs'
+
 # Parallel versions of OpenSSH and related tools
 brew 'pssh'
 
