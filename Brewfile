@@ -186,6 +186,9 @@ brew 'libxslt'
 # Clone of ls with colorful output, file type icons, and more
 brew 'lsd'
 
+# Apple Silicon Monitor Top written in Go Lang
+brew 'mactop'
+
 # Mac App Store command-line interface
 brew 'mas'
 
