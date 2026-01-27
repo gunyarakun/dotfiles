@@ -6,8 +6,8 @@ uname=`uname`
 
 case $uname in
   Darwin)
-    ln -h ${script_dir}/settings.json ~/Library/Application\ Support/Code/User/settings.json
-    ln -h ${script_dir}/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+    ln -snf ${script_dir}/settings.json ~/Library/Application\ Support/Code/User/settings.json
+    ln -snf ${script_dir}/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
     ;;
   Linux)
     # Do nothing
