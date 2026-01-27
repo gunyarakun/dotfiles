@@ -252,6 +252,9 @@ brew 'terraform'
 # Simplified and community-driven man pages
 brew 'tldr'
 
+# Terminal multiplexer
+brew 'tmux'
+
 # Program that allows you to count code, quickly
 brew 'tokei'
 

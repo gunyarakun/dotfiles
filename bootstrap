@@ -68,5 +68,8 @@ ln -snf $base_dir/vim/vim ~/.vim
 # vscode
 ./vscode/setup.sh
 
+# tmux
+ln -snf $base_dir/tmux/tmux.conf ~/.tmux.conf
+
 # claude
 ./claude/setup.sh
