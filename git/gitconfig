@@ -21,6 +21,7 @@
 #	ff = false
 [diff]
 	tool = difftastic
+	wordRegex = [a-zA-Z0-9_]+|[ぁ-ん]+|[ァ-ヶー]+|[一-龥々〇〆]+|.
 [difftool]
 	prompt = false
 [difftool "difftastic"]
@@ -50,3 +51,4 @@
 [alias]
 	pushfwl = push --force-with-lease
 	aicommit = "!f() { COMMITMSG=$(claude -p 'Generate ONLY a one-line Git commit message in English, using imperative mood, summarizing what was changed and why, based strictly on the contents of `git diff --cached`. Do not add explanation or a body. Output only the commit summary line.'); git commit -m \"$COMMITMSG\" -e; }; f"
+	wdiff = diff --color-words
