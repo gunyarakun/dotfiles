@@ -3,6 +3,11 @@
   "sandbox": {
     "enabled": true,
     "allowUnsandboxedCommands": false,
+    "excludedCommands": [
+      "docker",
+      "git",
+      "gh"
+    ],
     "filesystem": {
       "denyRead": [
         "~/.aws/credentials",
