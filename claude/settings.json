@@ -1,5 +1,4 @@
 {
-  "effortLevel": "high",
   "sandbox": {
     "enabled": true,
     "allowUnsandboxedCommands": false,
@@ -21,7 +20,6 @@
     "allow": [],
     "deny": [
       "Bash(rm -rf *)",
-      "Bash(curl *)",
       "Bash(wget *)",
       "Bash(git push *)",
       "Bash(chmod 777 *)",
@@ -31,6 +29,9 @@
       "Read(./config/credentials.json)",
       "Read(**/*.pem)",
       "Read(**/*.key)"
+    ],
+    "ask": [
+      "Bash(curl *)"
     ]
   }
 }
