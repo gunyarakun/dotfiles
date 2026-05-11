@@ -17,7 +17,11 @@
   },
   "showThinkingSummaries": true,
   "permissions": {
-    "allow": [],
+    "allow": [
+      "Read(./.env.example)",
+      "Read(./.env.sample)",
+      "Read(./.env.template)"
+    ],
     "deny": [
       "Bash(rm -rf *)",
       "Bash(wget *)",
