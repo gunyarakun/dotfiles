@@ -5,12 +5,12 @@ set -e -u
 # mise
 if [ ! -f ~/.local/bin/mise ]; then
   curl https://mise.run | sh
-  eval "$(~/.local/bin/mise activate zsh)"
 fi
+eval "$(~/.local/bin/mise activate zsh)"
 
 mise install python@3.13
 mise use --global python@3.13
-pip install uv
+mise exec python@3.13 -- python -m pip install uv
 mise install ruby@3.4
 mise use --global ruby@3.4
 mise install nodejs@lts
