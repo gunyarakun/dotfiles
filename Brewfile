@@ -246,6 +246,9 @@ brew 'stern'
 # User interface to the TELNET protocol
 brew 'telnet'
 
+# Send macOS User Notifications from the command-line
+brew 'terminal-notifier'
+
 # Tool to build, change, and version infrastructure
 brew 'terraform'
 

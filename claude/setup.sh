@@ -6,4 +6,5 @@ if [ ! -d ~/.claude ]; then
   mkdir ~/.claude
 fi
 ln -snf ${script_dir}/settings.json ~/.claude/settings.json
+ln -snf ${script_dir}/hooks ~/.claude/hooks
 ln -snf ${script_dir}/skills ~/.claude/skills
