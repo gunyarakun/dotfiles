@@ -41,6 +41,9 @@ cask 'slack'
 # Plugin for AWS CLI to start and end sessions that connect to managed instances
 cask 'session-manager-plugin'
 
+# Menu bar manager
+cask 'thaw'
+
 # Open-source code editor
 cask 'visual-studio-code'
 
