@@ -93,6 +93,9 @@ brew 'cheat'
 # GNU File, Shell, and Text utilities
 brew 'coreutils'
 
+# Your feedback loop with the agent: review plans and code locally
+brew 'crit'
+
 # Top-like interface for container metrics
 brew 'ctop'
 
