@@ -16,6 +16,10 @@
     "network": {}
   },
   "showThinkingSummaries": true,
+  "tui": "fullscreen",
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true
+  },
   "hooks": {
     "Stop": [
       {
