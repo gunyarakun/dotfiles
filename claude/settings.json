@@ -1,24 +1,25 @@
 {
-  "sandbox": {
-    "enabled": true,
-    "allowUnsandboxedCommands": false,
-    "excludedCommands": [
-      "docker",
-      "git",
-      "gh"
+  "permissions": {
+    "allow": [
+      "Read(./.env.example)",
+      "Read(./.env.sample)",
+      "Read(./.env.template)"
     ],
-    "filesystem": {
-      "denyRead": [
-        "~/.aws/credentials",
-        "~/.ssh"
-      ]
-    },
-    "network": {}
-  },
-  "showThinkingSummaries": true,
-  "tui": "fullscreen",
-  "enabledPlugins": {
-    "swift-lsp@claude-plugins-official": true
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(wget *)",
+      "Bash(git push *)",
+      "Bash(chmod 777 *)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./config/credentials.json)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)"
+    ],
+    "ask": [
+      "Bash(curl *)"
+    ]
   },
   "hooks": {
     "Stop": [
@@ -42,26 +43,34 @@
       }
     ]
   },
-  "permissions": {
-    "allow": [
-      "Read(./.env.example)",
-      "Read(./.env.sample)",
-      "Read(./.env.template)"
-    ],
-    "deny": [
-      "Bash(rm -rf *)",
-      "Bash(wget *)",
-      "Bash(git push *)",
-      "Bash(chmod 777 *)",
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Read(./secrets/**)",
-      "Read(./config/credentials.json)",
-      "Read(**/*.pem)",
-      "Read(**/*.key)"
-    ],
-    "ask": [
-      "Bash(curl *)"
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true,
+    "document-skills@anthropic-agent-skills": true
+  },
+  "extraKnownMarketplaces": {
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
+      }
+    }
+  },
+  "sandbox": {
+    "enabled": true,
+    "allowUnsandboxedCommands": false,
+    "network": {},
+    "filesystem": {
+      "denyRead": [
+        "~/.aws/credentials",
+        "~/.ssh"
+      ]
+    },
+    "excludedCommands": [
+      "docker",
+      "git",
+      "gh"
     ]
-  }
+  },
+  "tui": "fullscreen",
+  "showThinkingSummaries": true
 }
