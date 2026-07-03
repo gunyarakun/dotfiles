@@ -90,6 +90,9 @@ brew 'bvi'
 # Create and view interactive cheat sheets for *nix commands
 brew 'cheat'
 
+# Emulate mouse and keyboard events from the command line
+brew 'cliclick'
+
 # GNU File, Shell, and Text utilities
 brew 'coreutils'
 
