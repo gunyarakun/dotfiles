@@ -7,6 +7,8 @@ if [ ! -f ~/.local/bin/mise ]; then
   curl https://mise.run | sh
 fi
 eval "$(~/.local/bin/mise activate zsh)"
+# Update mise itself (herdr etc. require a recent registry)
+mise self-update -y || true
 
 mise install python@3.13
 mise use --global python@3.13
@@ -22,3 +24,6 @@ mise install ghq
 mise use --global ghq
 mise install peco
 mise use --global peco
+# Install herdr
+mise install herdr
+mise use --global herdr
