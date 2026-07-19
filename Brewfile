@@ -259,7 +259,8 @@ brew 'telnet'
 brew 'terminal-notifier'
 
 # Tool to build, change, and version infrastructure
-brew 'terraform'
+tap 'hashicorp/tap'
+brew 'hashicorp/tap/terraform'
 
 # Simplified and community-driven man pages
 brew 'tldr'
