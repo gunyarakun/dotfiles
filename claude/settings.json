@@ -21,8 +21,9 @@
       "Bash(curl *)"
     ]
   },
+  "model": "claude-fable-5[1m]",
   "hooks": {
-    "Stop": [
+    "Notification": [
       {
         "hooks": [
           {
@@ -32,7 +33,19 @@
         ]
       }
     ],
-    "Notification": [
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/Users/tasuku/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
       {
         "hooks": [
           {
@@ -44,8 +57,8 @@
     ]
   },
   "enabledPlugins": {
-    "swift-lsp@claude-plugins-official": true,
-    "document-skills@anthropic-agent-skills": true
+    "document-skills@anthropic-agent-skills": true,
+    "swift-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "anthropic-agent-skills": {

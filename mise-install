@@ -27,3 +27,6 @@ mise use --global peco
 # Install herdr
 mise install herdr
 mise use --global herdr
+# Install OpenCode
+mise install opencode
+mise use --global opencode
