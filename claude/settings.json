@@ -85,5 +85,8 @@
     ]
   },
   "tui": "fullscreen",
-  "showThinkingSummaries": true
+  "showThinkingSummaries": true,
+  "env": {
+    "CLAUDE_CODE_DISABLE_MOUSE": "1"
+  }
 }
