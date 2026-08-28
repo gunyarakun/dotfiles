@@ -9,6 +9,7 @@ source ~/.zsh/zsh/zshrc.cuda
 source ~/.zsh/zsh/zshrc.ssh-agent
 source ~/.zsh/zsh/zshrc.syntax-highlighting-style
 source ~/.zsh/zsh/zshrc.docker
+source ~/.zsh/zsh/zshrc.podman
 source ~/.zsh/zsh/zshrc.vscode
 source ~/.zsh/zsh/zshrc.peco
 source ~/.zsh/zsh/zshrc.rust

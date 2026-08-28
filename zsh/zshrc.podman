@@ -1,0 +1,10 @@
+# podman
+if [[ -d /opt/podman/bin ]]; then
+  export PATH="/opt/podman/bin:${PATH}"
+fi
+
+if type podman >/dev/null 2>&1; then
+  alias pd="podman"
+  alias pdc="podman compose"
+  alias pdm="podman machine"
+fi
