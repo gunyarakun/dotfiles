@@ -228,6 +228,9 @@ brew 'pastel'
 # PDF processor written in Go
 brew 'pdfcpu'
 
+# Framework for managing multi-language pre-commit hooks
+brew 'pre-commit'
+
 # Modern replacement for ps written in Rust
 brew 'procs'
 
