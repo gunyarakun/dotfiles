@@ -71,5 +71,8 @@ ln -snf $base_dir/vim/vim ~/.vim
 # tmux
 ln -snf $base_dir/tmux/tmux.conf ~/.tmux.conf
 
+# agent skills (shared by claude, opencode, etc.)
+./agents/setup.sh
+
 # claude
 ./claude/setup.sh

@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_DISABLE_MOUSE": "1"
+  },
   "permissions": {
     "allow": [
       "Read(./.env.example)",
@@ -86,7 +89,5 @@
   },
   "tui": "fullscreen",
   "showThinkingSummaries": true,
-  "env": {
-    "CLAUDE_CODE_DISABLE_MOUSE": "1"
-  }
+  "agentPushNotifEnabled": true
 }

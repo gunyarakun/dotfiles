@@ -7,4 +7,4 @@ if [ ! -d ~/.claude ]; then
 fi
 ln -snf ${script_dir}/settings.json ~/.claude/settings.json
 ln -snf ${script_dir}/hooks ~/.claude/hooks
-ln -snf ${script_dir}/skills ~/.claude/skills
+ln -snf ${script_dir}/../agents/skills ~/.claude/skills
