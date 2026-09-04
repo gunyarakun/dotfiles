@@ -102,6 +102,43 @@
       "skillFolderHash": "c4c5be074563da26eccf0496d909d67a9a51dcdc",
       "installedAt": "2026-07-15T09:35:08.870Z",
       "updatedAt": "2026-07-15T09:35:08.870Z"
+    },
+    "natural-japanese": {
+      "source": "coji/natural-japanese",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coji/natural-japanese.git",
+      "skillPath": "skills/natural-japanese/SKILL.md",
+      "skillFolderHash": "db9b5cbe66bf94f670c4df7473513b45b328f52d",
+      "installedAt": "2026-09-04T04:00:29.153Z",
+      "updatedAt": "2026-09-04T04:00:29.153Z"
+    },
+    "avoid-ai-writing": {
+      "source": "conorbronsdon/avoid-ai-writing",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/conorbronsdon/avoid-ai-writing.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "788c6675c18d99fb00b100ce589f644639c46a15",
+      "installedAt": "2026-09-04T04:00:31.282Z",
+      "updatedAt": "2026-09-04T04:00:31.282Z"
+    },
+    "humanizer": {
+      "source": "blader/humanizer",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/blader/humanizer.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "e2e92e7b4b8229253ed5c8e81dc65463fdeddda5",
+      "pluginName": "humanizer",
+      "installedAt": "2026-09-04T04:00:33.480Z",
+      "updatedAt": "2026-09-04T04:00:33.480Z"
+    },
+    "stop-ai-slop-jp": {
+      "source": "iKora128/stop-ai-slop-jp",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/iKora128/stop-ai-slop-jp.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "e09d32796f253a62693885757cea484c275d06f2",
+      "installedAt": "2026-09-04T04:00:35.351Z",
+      "updatedAt": "2026-09-04T04:00:35.351Z"
     }
   },
   "dismissed": {
