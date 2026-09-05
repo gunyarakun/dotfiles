@@ -2,59 +2,9 @@
 unset ANTHROPIC_API_KEY
 export ANTHROPIC_BASE_URL="${DS4_ANTHROPIC_BASE_URL:-http://127.0.0.1:8000}"
 
-# If ds4-server is not running, offer to start it (DS4_AUTOSTART=1 starts it without asking)
-DS4_DIR="${DS4_DIR:-$HOME/dev/src/github.com/antirez/ds4}"
-# Default flags follow the recommended "local API" setup (long context + disk
-# KV checkpoints): see the "Server" section of the ds4 README and the
-# "local API" example in `ds4 --help` (ds4_help.c), both of which suggest
-# `./ds4-server --ctx 100000 --kv-disk-dir ... --kv-disk-space-mb ...`.
-DS4_SERVER_CMD="${DS4_SERVER_CMD:-./ds4-server --ctx 100000 --kv-disk-dir $HOME/.local/share/ds4/kv --kv-disk-space-mb 16384}"
-DS4_SERVER_LOG="${DS4_SERVER_LOG:-$HOME/.local/state/ds4-server.log}"
-DS4_START_TIMEOUT="${DS4_START_TIMEOUT:-180}"
+# Make sure ds4-server is running (DS4_AUTOSTART=1 starts it without asking)
+"$(dirname "$0")/ds4-server" ensure || exit 1
 
-server_alive() {
-    curl -sf --max-time 2 "$ANTHROPIC_BASE_URL/v1/models" >/dev/null 2>&1
-}
-
-start_server() {
-    mkdir -p "$(dirname "$DS4_SERVER_LOG")"
-    echo "Starting ds4-server... (log: $DS4_SERVER_LOG)" >&2
-    (cd "$DS4_DIR" && nohup $DS4_SERVER_CMD >>"$DS4_SERVER_LOG" 2>&1 &)
-    i=0
-    while [ "$i" -lt "$DS4_START_TIMEOUT" ]; do
-        if server_alive; then
-            echo "ds4-server is up" >&2
-            return 0
-        fi
-        i=$((i + 1))
-        sleep 1
-    done
-    echo "error: ds4-server did not respond within ${DS4_START_TIMEOUT}s; check $DS4_SERVER_LOG" >&2
-    return 1
-}
-
-if ! server_alive; then
-    case "$ANTHROPIC_BASE_URL" in
-        *127.0.0.1*|*localhost*) ;;
-        *)
-            echo "error: ds4-server ($ANTHROPIC_BASE_URL) is not responding (remote host; not auto-starting)" >&2
-            exit 1
-            ;;
-    esac
-    if [ "${DS4_AUTOSTART:-0}" = "1" ]; then
-        start_server || exit 1
-    elif [ -t 0 ]; then
-        printf 'ds4-server (%s) is not running. Start it? [Y/n] ' "$ANTHROPIC_BASE_URL" >&2
-        read -r ans
-        case "$ans" in
-            [Nn]*) echo "Aborted" >&2; exit 1 ;;
-            *) start_server || exit 1 ;;
-        esac
-    else
-        echo "error: ds4-server ($ANTHROPIC_BASE_URL) is not running" >&2
-        exit 1
-    fi
-fi
 export ANTHROPIC_AUTH_TOKEN="${DS4_API_KEY:-dsv4-local}"
 export ANTHROPIC_MODEL="deepseek-v4-flash"
 
