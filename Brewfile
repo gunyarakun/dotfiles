@@ -264,6 +264,9 @@ brew 'telnet'
 # Send macOS User Notifications from the command-line
 brew 'terminal-notifier'
 
+# Trigram-indexed grep for fast regex search in large codebases
+brew 'tgrep'
+
 # Tool to build, change, and version infrastructure
 tap 'hashicorp/tap'
 brew 'hashicorp/tap/terraform'
