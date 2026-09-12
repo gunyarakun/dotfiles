@@ -35,6 +35,9 @@ cask 'google-cloud-sdk'
 # Control your tools with a few keystrokes
 cask 'raycast'
 
+# Open source virtual/remote desktop application
+cask 'rustdesk'
+
 # Team communication and collaboration software
 cask 'slack'
 
