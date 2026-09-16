@@ -18,7 +18,7 @@ cask 'atok'
 cask 'discord'
 
 # App to build and share containerised applications and microservices
-cask 'docker'
+cask 'docker-desktop'
 
 # Client for the Dropbox cloud storage service
 cask 'dropbox'
@@ -30,7 +30,7 @@ cask 'flutter'
 cask 'google-chrome'
 
 # Set of tools to manage resources and applications hosted on Google Cloud
-cask 'google-cloud-sdk'
+cask 'gcloud-cli'
 
 # Control your tools with a few keystrokes
 cask 'raycast'
@@ -231,6 +231,9 @@ brew 'pastel'
 # PDF processor written in Go
 brew 'pdfcpu'
 
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew 'poppler'
+
 # Framework for managing multi-language pre-commit hooks
 brew 'pre-commit'
 
@@ -271,8 +274,8 @@ brew 'tgrep'
 tap 'hashicorp/tap'
 brew 'hashicorp/tap/terraform'
 
-# Simplified and community-driven man pages
-brew 'tldr'
+# Official tldr client written in Rust
+brew 'tlrc'
 
 # Terminal multiplexer
 brew 'tmux'
@@ -295,14 +298,11 @@ brew 'wimlib'
 # HTTP benchmarking tool
 brew 'wrk'
 
+# CSV CLI magician written in Rust (successor to xsv)
+brew 'xan'
+
 # Friendly and fast tool for sending HTTP requests
 brew 'xh'
-
-# PDF viewer
-brew 'xpdf'
-
-# Fast CSV toolkit written in Rust
-brew 'xsv'
 
 # Feature-rich command-line audio/video downloader
 brew 'yt-dlp'
