@@ -24,7 +24,6 @@
       "Bash(curl *)"
     ]
   },
-  "model": "fable[1m]",
   "hooks": {
     "Notification": [
       {
