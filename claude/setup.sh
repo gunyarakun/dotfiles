@@ -7,4 +7,15 @@ if [ ! -d ~/.claude ]; then
 fi
 ln -snf ${script_dir}/settings.json ~/.claude/settings.json
 ln -snf ${script_dir}/hooks ~/.claude/hooks
-ln -snf ${script_dir}/../agents/skills ~/.claude/skills
+
+skills_dir=$(cd "${script_dir}/../agents/skills" && pwd)
+if [ -d ~/.claude/skills ] && [ ! -L ~/.claude/skills ]; then
+  # ~/.claude/skills is a real directory (e.g. gstack lives there), so
+  # ln -snf would nest the link inside it; link each skill instead
+  for skill in "${skills_dir}"/*; do
+    [ -e "${skill}/SKILL.md" ] || continue
+    ln -snf "${skill}" ~/.claude/skills/
+  done
+else
+  ln -snf "${skills_dir}" ~/.claude/skills
+fi
