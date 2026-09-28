@@ -108,9 +108,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/coji/natural-japanese.git",
       "skillPath": "skills/natural-japanese/SKILL.md",
-      "skillFolderHash": "db9b5cbe66bf94f670c4df7473513b45b328f52d",
+      "skillFolderHash": "77fce8fc457a41321ac4963065590fb91c14f781",
       "installedAt": "2026-09-04T04:00:29.153Z",
-      "updatedAt": "2026-09-04T04:00:29.153Z"
+      "updatedAt": "2026-09-28T05:48:14.000Z"
     },
     "avoid-ai-writing": {
       "source": "conorbronsdon/avoid-ai-writing",
