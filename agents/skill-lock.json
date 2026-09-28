@@ -139,6 +139,15 @@
       "skillFolderHash": "e09d32796f253a62693885757cea484c275d06f2",
       "installedAt": "2026-09-04T04:00:35.351Z",
       "updatedAt": "2026-09-04T04:00:35.351Z"
+    },
+    "core-message-writing": {
+      "source": "shibayu36/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/shibayu36/agent-skills.git",
+      "skillPath": "skills/core-message-writing/SKILL.md",
+      "skillFolderHash": "0f01ce643dbf10aa73d3de5a9e8464bc7353365b",
+      "installedAt": "2026-09-28T05:14:59.000Z",
+      "updatedAt": "2026-09-28T05:14:59.000Z"
     }
   },
   "dismissed": {
