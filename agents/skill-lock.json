@@ -148,6 +148,87 @@
       "skillFolderHash": "0f01ce643dbf10aa73d3de5a9e8464bc7353365b",
       "installedAt": "2026-09-28T05:14:59.000Z",
       "updatedAt": "2026-09-28T05:14:59.000Z"
+    },
+    "threejs-3d-generator": {
+      "source": "majidmanzarpour/threejs-game-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/majidmanzarpour/threejs-game-skills.git",
+      "skillPath": "skills/threejs-3d-generator/SKILL.md",
+      "skillFolderHash": "88c0eb9db0eb0b8e1220197be6f92e47bee5ba3e",
+      "installedAt": "2026-09-29T01:30:27.159Z",
+      "updatedAt": "2026-09-29T01:30:27.159Z"
+    },
+    "threejs-aaa-graphics-builder": {
+      "source": "majidmanzarpour/threejs-game-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/majidmanzarpour/threejs-game-skills.git",
+      "skillPath": "skills/threejs-aaa-graphics-builder/SKILL.md",
+      "skillFolderHash": "0d417176f66a07962f47db32fe3ccfaa9b91980a",
+      "installedAt": "2026-09-29T01:30:27.162Z",
+      "updatedAt": "2026-09-29T01:30:27.162Z"
+    },
+    "threejs-audio-generator": {
+      "source": "majidmanzarpour/threejs-game-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/majidmanzarpour/threejs-game-skills.git",
+      "skillPath": "skills/threejs-audio-generator/SKILL.md",
+      "skillFolderHash": "4b1e71b84e87885bb42e225e4f72f741479820ab",
+      "installedAt": "2026-09-29T01:30:27.173Z",
+      "updatedAt": "2026-09-29T01:30:27.173Z"
+    },
+    "threejs-debug-profiler": {
+      "source": "majidmanzarpour/threejs-game-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/majidmanzarpour/threejs-game-skills.git",
+      "skillPath": "skills/threejs-debug-profiler/SKILL.md",
+      "skillFolderHash": "4edb6b7f92ab0f40697454a5539312785f35c3e3",
+      "installedAt": "2026-09-29T01:30:27.175Z",
+      "updatedAt": "2026-09-29T01:30:27.175Z"
+    },
+    "threejs-game-director": {
+      "source": "majidmanzarpour/threejs-game-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/majidmanzarpour/threejs-game-skills.git",
+      "skillPath": "skills/threejs-game-director/SKILL.md",
+      "skillFolderHash": "d69e0e4b5508079e2ab817340f42dfcdd5a23e48",
+      "installedAt": "2026-09-29T01:30:27.176Z",
+      "updatedAt": "2026-09-29T01:30:27.176Z"
+    },
+    "threejs-game-ui-designer": {
+      "source": "majidmanzarpour/threejs-game-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/majidmanzarpour/threejs-game-skills.git",
+      "skillPath": "skills/threejs-game-ui-designer/SKILL.md",
+      "skillFolderHash": "aaaefe2d6b776e8c4d9812378d4b8f7624223df5",
+      "installedAt": "2026-09-29T01:30:27.176Z",
+      "updatedAt": "2026-09-29T01:30:27.176Z"
+    },
+    "threejs-gameplay-systems": {
+      "source": "majidmanzarpour/threejs-game-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/majidmanzarpour/threejs-game-skills.git",
+      "skillPath": "skills/threejs-gameplay-systems/SKILL.md",
+      "skillFolderHash": "2e7626e73ac6a7c74ae9e3de0b0ed5f53b054f53",
+      "installedAt": "2026-09-29T01:30:27.177Z",
+      "updatedAt": "2026-09-29T01:30:27.177Z"
+    },
+    "threejs-image-generator": {
+      "source": "majidmanzarpour/threejs-game-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/majidmanzarpour/threejs-game-skills.git",
+      "skillPath": "skills/threejs-image-generator/SKILL.md",
+      "skillFolderHash": "2ee5bd2b9cd6ca16d73d0722baf9d00504eea8d6",
+      "installedAt": "2026-09-29T01:30:27.177Z",
+      "updatedAt": "2026-09-29T01:30:27.177Z"
+    },
+    "threejs-qa-release": {
+      "source": "majidmanzarpour/threejs-game-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/majidmanzarpour/threejs-game-skills.git",
+      "skillPath": "skills/threejs-qa-release/SKILL.md",
+      "skillFolderHash": "f76e229cd858c01d1ecb8fa1b3e7d66d9ea4072f",
+      "installedAt": "2026-09-29T01:30:27.178Z",
+      "updatedAt": "2026-09-29T01:30:27.178Z"
     }
   },
   "dismissed": {
