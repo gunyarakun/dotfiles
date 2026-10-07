@@ -27,6 +27,10 @@ mise use --global peco
 # Install herdr
 mise install herdr
 mise use --global herdr
+# Install herdr plugins
+if ! herdr plugin list | grep -qi annotate; then
+  herdr plugin install -y plannotator/herdr-annotate
+fi
 # Install OpenCode
 mise install opencode
 mise use --global opencode
