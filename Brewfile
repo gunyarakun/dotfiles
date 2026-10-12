@@ -222,6 +222,9 @@ brew 'ngrep'
 # HTTP load generator, inspired by rakyll/hey with tui animation
 brew 'oha'
 
+# Create, run, and share large language models (LLMs)
+brew 'ollama', restart_service: :changed
+
 # Open client for Cisco AnyConnect VPN
 brew 'openconnect'
 

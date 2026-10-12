@@ -34,3 +34,8 @@ fi
 # Install OpenCode
 mise install opencode
 mise use --global opencode
+# Install Pi
+mise install pi
+mise use --global pi
+# Install Pi extensions
+pi install npm:@ollama/pi-web-search

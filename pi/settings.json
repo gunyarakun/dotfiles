@@ -1,0 +1,8 @@
+{
+  "packages": [
+    "npm:@ollama/pi-web-search"
+  ],
+  "skills": [
+    "!**/synced/**"
+  ]
+}
