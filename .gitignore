@@ -1,2 +1,8 @@
 vim/vim/.netrwhist
 *~
+mise.local.toml
+.miserc.local.toml
+.claude/settings.local.json
+.claude/.cc-writes/
+agents/skills/synced/
+agents/skills/.trash/

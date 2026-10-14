@@ -1,0 +1,239 @@
+# macOS-only config, loaded through auto_env in .miserc.toml
+
+[dotfiles]
+# vscode (merge: VS Code writes its own keys into settings.json)
+"~/Library/Application Support/Code/User/settings.json/dotfiles" = { source = "vscode/settings.json", merge = true }
+"~/Library/Application Support/Code/User/keybindings.json" = "vscode/keybindings.json"
+
+[bootstrap.hooks]
+# settings.json was a symlink into this repo before mise; make it a real file for merge
+pre-dotfiles = """
+target="$HOME/Library/Application Support/Code/User/settings.json"
+case $(readlink "$target") in
+  '{{ config_root }}'/*|./vscode/*) cp "$target" "$target.tmp" 2>/dev/null && mv "$target.tmp" "$target" || rm -f "$target" ;;
+esac
+"""
+post-packages = "brew services list | grep -q '^ollama .*started' || brew services start ollama"
+
+# Upgrade formulae every morning (replaces `brew autoupdate`), restarting
+# ollama when it was upgraded. Casks are left out: some need sudo, which has no
+# terminal here, and most update themselves.
+[bootstrap.macos.launchd.agents.mise-packages-upgrade]
+program = "/bin/sh"
+args = ["-c", """
+before=$(brew list --versions ollama)
+~/.local/bin/mise -C '{{ config_root }}' bootstrap packages upgrade --manager brew --yes
+[ "$(brew list --versions ollama)" = "$before" ] || brew services restart ollama
+"""]
+start_calendar_interval = [{ hour = 9, minute = 0 }]
+environment = { PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin" }
+stdout_path = "~/Library/Logs/mise-packages-upgrade.log"
+stderr_path = "~/Library/Logs/mise-packages-upgrade.log"
+
+[bootstrap.packages]
+# Password manager that keeps all passwords secure behind one password
+"brew-cask:1password" = "latest"
+# Command-line interface for 1Password
+"brew-cask:1password-cli" = "latest"
+# Enable Windows-like alt-tab
+"brew-cask:alt-tab" = "latest"
+# Japanese input method editor (IME) produced by JustSystems
+"brew-cask:atok" = "latest"
+# Voice and text chat software
+"brew-cask:discord" = "latest"
+# App to build and share containerised applications and microservices
+"brew-cask:docker-desktop" = "latest"
+# Client for the Dropbox cloud storage service
+"brew-cask:dropbox" = "latest"
+# UI toolkit for building applications for mobile, web and desktop
+"brew-cask:flutter" = "latest"
+# Web browser
+"brew-cask:google-chrome" = "latest"
+# Set of tools to manage resources and applications hosted on Google Cloud
+"brew-cask:gcloud-cli" = "latest"
+# Control your tools with a few keystrokes
+"brew-cask:raycast" = "latest"
+# Open source virtual/remote desktop application
+"brew-cask:rustdesk" = "latest"
+# Team communication and collaboration software
+"brew-cask:slack" = "latest"
+# Plugin for AWS CLI to start and end sessions that connect to managed instances
+"brew-cask:session-manager-plugin" = "latest"
+# Menu bar manager
+"brew-cask:thaw" = "latest"
+# Open-source code editor
+"brew-cask:visual-studio-code" = "latest"
+# Multimedia player
+"brew-cask:vlc" = "latest"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+"brew-cask:wezterm" = "latest"
+# Video communication and virtual meeting platform
+"brew-cask:zoom" = "latest"
+# Writes your git commit messages for you with AI
+"brew:aicommits" = "latest"
+# Automatically restart SSH sessions and tunnels
+"brew:autossh" = "latest"
+# Official Amazon AWS command-line interface
+"brew:awscli" = "latest"
+# Microsoft Azure CLI 2.0
+"brew:azure-cli" = "latest"
+# Clone of cat(1) with syntax highlighting and Git integration
+"brew:bat" = "latest"
+# High performance key/value database
+"brew:berkeley-db" = "latest"
+# Parser generator
+"brew:bison" = "latest"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+"brew:btop" = "latest"
+# Vi-like binary file (hex) editor
+"brew:bvi" = "latest"
+# Create and view interactive cheat sheets for *nix commands
+"brew:cheat" = "latest"
+# Emulate mouse and keyboard events from the command line
+"brew:cliclick" = "latest"
+# GNU File, Shell, and Text utilities
+"brew:coreutils" = "latest"
+# Your feedback loop with the agent: review plans and code locally
+"brew:crit" = "latest"
+# Top-like interface for container metrics
+"brew:ctop" = "latest"
+# Diff that understands syntax
+"brew:difftastic" = "latest"
+# Load/unload environment variables based on $PWD
+"brew:direnv" = "latest"
+# Terminal visual disk space navigator
+"brew:diskonaut" = "latest"
+# Tool for exploring each layer in a docker image
+"brew:dive" = "latest"
+# Text processing system for reStructuredText
+"brew:docutils" = "latest"
+# SOCKS client wrapper for *BSD/macOS
+"brew:dsocks" = "latest"
+# More intuitive version of du in rust
+"brew:dust" = "latest"
+# Perl lib for reading and writing EXIF metadata
+"brew:exiftool" = "latest"
+# Modern, maintained replacement for ls
+"brew:eza" = "latest"
+# Simple, fast and user-friendly alternative to find
+"brew:fd" = "latest"
+# Identify or delete duplicate files
+"brew:fdupes" = "latest"
+# Play, record, convert, and stream audio and video
+"brew:ffmpeg" = "latest"
+# Command-line downloader for image-hosting site galleries and collections
+"brew:gallery-dl" = "latest"
+# GitHub command-line tool
+"brew:gh" = "latest"
+# Distributed revision control system
+"brew:git" = "latest"
+# Syntax-highlighting pager for git and diff output
+"brew:git-delta" = "latest"
+# Git extension for versioning large files
+"brew:git-lfs" = "latest"
+# Render markdown on the CLI
+"brew:glow" = "latest"
+# Open-source build automation tool based on the Groovy and Kotlin DSL
+"brew:gradle" = "latest"
+# Make JSON greppable
+"brew:gron" = "latest"
+# Bash and zsh history suggest box
+"brew:hstr" = "latest"
+# Tools and libraries to manipulate images in many formats
+"brew:imagemagick" = "latest"
+# Lightweight and flexible command-line JSON processor
+"brew:jq" = "latest"
+# Kubernetes CLI To Manage Your Clusters In Style!
+"brew:k9s" = "latest"
+# Anti-bikeshedding Kotlin linter with built-in formatter
+"brew:ktlint" = "latest"
+# Sophisticated file transfer program
+"brew:lftp" = "latest"
+# Portable Foreign Function Interface library
+"brew:libffi" = "latest"
+# Provides library functionality for FIDO U2F & FIDO 2.0, including USB
+"brew:libfido2" = "latest"
+# C XSLT library for GNOME
+"brew:libxslt" = "latest"
+# Clone of ls with colorful output, file type icons, and more
+"brew:lsd" = "latest"
+# Apple Silicon Monitor Top written in Go Lang
+"brew:mactop" = "latest"
+# Mac App Store command-line interface
+"brew:mas" = "latest"
+# Lightweight PDF and XPS viewer
+"brew:mupdf-tools" = "latest"
+# Interactive cheatsheet tool for the command-line
+"brew:navi" = "latest"
+# NCurses Disk Usage
+"brew:ncdu" = "latest"
+# Network grep
+"brew:ngrep" = "latest"
+# HTTP load generator, inspired by rakyll/hey with tui animation
+"brew:oha" = "latest"
+# Create, run, and share large language models (LLMs)
+"brew:ollama" = "latest"
+# Open client for Cisco AnyConnect VPN
+"brew:openconnect" = "latest"
+# Command-line tool to generate, analyze, convert and manipulate colors
+"brew:pastel" = "latest"
+# PDF processor written in Go
+"brew:pdfcpu" = "latest"
+# PDF rendering library (based on the xpdf-3.0 code base)
+"brew:poppler" = "latest"
+# Framework for managing multi-language pre-commit hooks
+"brew:pre-commit" = "latest"
+# Modern replacement for ps written in Rust
+"brew:procs" = "latest"
+# Parallel versions of OpenSSH and related tools
+"brew:pssh" = "latest"
+# Rsync for cloud storage
+"brew:rclone" = "latest"
+# Wrapper around ripgrep that adds multiple rich file types
+"brew:ripgrep-all" = "latest"
+# SOund eXchange: universal sound sample translator
+"brew:sox" = "latest"
+# Cross-shell prompt for astronauts
+"brew:starship" = "latest"
+# Tail multiple Kubernetes pods & their containers
+"brew:stern" = "latest"
+# User interface to the TELNET protocol
+"brew:telnet" = "latest"
+# Send macOS User Notifications from the command-line
+"brew:terminal-notifier" = "latest"
+# Trigram-indexed grep for fast regex search in large codebases
+"brew:tgrep" = "latest"
+# Official tldr client written in Rust
+"brew:tlrc" = "latest"
+# Terminal multiplexer
+"brew:tmux" = "latest"
+# Program that allows you to count code, quickly
+"brew:tokei" = "latest"
+# Video processing framework with simplicity in mind
+"brew:vapoursynth" = "latest"
+# Vi 'workalike' with many additional features
+"brew:vim" = "latest"
+# Internet file retriever
+"brew:wget" = "latest"
+# Library to create, extract, and modify Windows Imaging files
+"brew:wimlib" = "latest"
+# HTTP benchmarking tool
+"brew:wrk" = "latest"
+# CSV CLI magician written in Rust (successor to xsv)
+"brew:xan" = "latest"
+# Friendly and fast tool for sending HTTP requests
+"brew:xh" = "latest"
+# Feature-rich command-line audio/video downloader
+"brew:yt-dlp" = "latest"
+# UNIX shell (command interpreter)
+"brew:zsh" = "latest"
+"mas:1380563956" = "latest" # 辞書 by 物書堂
+"mas:497799835" = "latest" # Xcode
+"mas:446243721" = "latest" # Disk Space Analyzer
+"mas:1294126402" = "latest" # HEIC Converter
+"mas:1528890965" = "latest" # TextSniper
+"mas:1614816445" = "latest" # TEPRA LINK 2
+"mas:704088911" = "latest" # TEPRA SMA3
+"mas:539883307" = "latest" # LINE
+"mas:937984704" = "latest" # Amphetamine
+"mas:1639692859" = "latest" # WattsConnected

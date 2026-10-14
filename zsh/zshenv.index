@@ -13,6 +13,15 @@ path+=(
 )
 # end
 
+# Homebrew prefix (packages are installed by `mise bootstrap`, with or without Homebrew)
+path=(
+  /opt/homebrew/bin(N-/)
+  /opt/homebrew/sbin(N-/)
+  /home/linuxbrew/.linuxbrew/bin(N-/)
+  /home/linuxbrew/.linuxbrew/sbin(N-/)
+  $path
+)
+
 typeset -U path cdpath fpath manpath
 
 # golang

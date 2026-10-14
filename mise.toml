@@ -1,0 +1,76 @@
+# Run `mise bootstrap` in this directory to set up the machine.
+# macOS-only packages and dotfiles are in mise.macos.toml.
+
+[dotfiles]
+# mise
+"~/.config/mise/config.toml" = "mise/config.toml"
+# bin
+"~/bin" = { source = "bin", mode = "symlink-each" }
+# zsh
+"~/.zsh/zsh" = "zsh"
+"~/.zshenv/dotfiles" = { line = "source ~/.zsh/zsh/zshenv.index" }
+"~/.zshrc/dotfiles" = { line = "source ~/.zsh/zsh/zshrc.index" }
+# git
+"~/.gitconfig" = "git/gitconfig"
+"~/.gitignore_global" = "git/gitignore_global"
+# vim
+"~/.vimrc" = "vim/vimrc"
+"~/.vim" = "vim/vim"
+# wezterm
+"~/.wezterm.lua" = { source = "wezterm/wezterm.lua", mode = "copy" }
+# tmux
+"~/.tmux.conf" = "tmux/tmux.conf"
+# agent skills (shared by claude, opencode, etc.)
+"~/.agents/skills" = "agents/skills"
+"~/.agents/.skill-lock.json" = "agents/skill-lock.json"
+# claude (merge: Claude Code writes its own keys into settings.json)
+"~/.claude/settings.json/dotfiles" = { source = "claude/settings.json", merge = true }
+"~/.claude/hooks" = "claude/hooks"
+# pi (merge: pi writes its own keys such as lastChangelogVersion)
+"~/.pi/agent/settings.json/dotfiles" = { source = "pi/settings.json", merge = true }
+
+[bootstrap.repos]
+"~/.zplug" = { url = "https://github.com/zplug/zplug.git" }
+
+[bootstrap.hooks]
+pre-dotfiles = [
+  # linking into a real ~/.agents/skills would nest the link inside it
+  "[ ! -d ~/.agents/skills ] || [ -L ~/.agents/skills ] || { echo '~/.agents/skills is a real directory; merge it into {{ config_root }}/agents/skills and remove it first' >&2; exit 1; }",
+  # merge targets were symlinks into this repo before mise; make them real files
+  """
+  for target in ~/.claude/settings.json ~/.pi/agent/settings.json; do
+    case $(readlink "$target") in
+      '{{ config_root }}'/*) cp "$target" "$target.tmp" && mv "$target.tmp" "$target" ;;
+    esac
+  done
+  """,
+]
+
+[tasks.bootstrap]
+description = "Setup steps that [dotfiles] and [tools] cannot declare"
+run = [
+  "git submodule update --init",
+  # keep a machine's own starship.toml
+  "[ -e ~/.config/starship.toml ] || { mkdir -p ~/.config && ln -snf '{{ config_root }}/starship.toml' ~/.config/starship.toml; }",
+  # remove links left in ~/bin after a script is deleted from bin/
+  "find ~/bin -maxdepth 1 -type l -lname '{{ config_root }}/bin/*' ! -exec test -e {} \\; -print -delete",
+  # link each skill into ~/.claude/skills, which also holds others (e.g. gstack, synced skills)
+  """
+  # before mise, ~/.claude/skills itself was a link to agents/skills
+  if [ -L ~/.claude/skills ]; then rm ~/.claude/skills; fi
+  mkdir -p ~/.claude/skills
+  for skill in '{{ config_root }}'/agents/skills/*/; do
+    [ -e "${skill}SKILL.md" ] || continue
+    link=~/.claude/skills/$(basename "$skill")
+    if [ -e "$link" ] && [ ! -L "$link" ]; then
+      echo "skip $link: a real directory exists" >&2
+    else
+      ln -snf "${skill%/}" "$link"
+    fi
+  done
+  find ~/.claude/skills -maxdepth 1 -type l -lname '{{ config_root }}/agents/skills/*' ! -exec test -e {} \\; -print -delete
+  """,
+  # mise exec reads the global config linked in this run and installs missing tools
+  "mise exec -- herdr plugin list | grep -qi annotate || mise exec -- herdr plugin install plannotator/herdr-annotate --yes",
+  "mise exec -- pi list | grep -q '@ollama/pi-web-search' || mise exec -- pi install npm:@ollama/pi-web-search",
+]

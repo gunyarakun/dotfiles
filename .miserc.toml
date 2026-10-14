@@ -1,0 +1,2 @@
+# Load mise.macos.toml only on macOS
+auto_env = true

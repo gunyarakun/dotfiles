@@ -11,11 +11,9 @@ case $uname in
     if ! command -v brew &> /dev/null; then
       echo "Install Homebrew first"
       open "https://brew.sh/"
-      exit
+      exit 1
     fi
-    brew bundle
-    brew tap homebrew/autoupdate
-    brew autoupdate start --upgrade --clean
+    # packages are declared in mise.macos.toml and installed by `mise bootstrap`
     ;;
   Linux)
     if [ -f /etc/debian_version ]; then
