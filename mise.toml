@@ -20,6 +20,8 @@
 "~/.wezterm.lua" = { source = "wezterm/wezterm.lua", mode = "copy" }
 # tmux
 "~/.tmux.conf" = "tmux/tmux.conf"
+# herdr
+"~/.config/herdr/config.toml" = "herdr/config.toml"
 # agent skills (shared by claude, opencode, etc.)
 "~/.agents/skills" = "agents/skills"
 "~/.agents/.skill-lock.json" = "agents/skill-lock.json"

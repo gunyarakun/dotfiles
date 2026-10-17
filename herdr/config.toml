@@ -1,0 +1,7 @@
+# herdr: https://herdr.dev/docs/configuration/
+# Only the prefix differs from the defaults; check live bindings with prefix+?.
+
+[keys]
+# Same prefix as tmux. ctrl+b (the default) is taken by Claude Code
+# (background a running command) and by copy-mode page-up.
+prefix = "ctrl+space"
