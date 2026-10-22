@@ -39,6 +39,8 @@ stderr_path = "~/Library/Logs/mise-packages-upgrade.log"
 "brew-cask:alt-tab" = "latest"
 # Japanese input method editor (IME) produced by JustSystems
 "brew-cask:atok" = "latest"
+# Microsoft Azure CLI 2.0
+"brew-cask:azure-cli" = "latest"
 # Voice and text chat software
 "brew-cask:discord" = "latest"
 # App to build and share containerised applications and microservices
@@ -75,8 +77,6 @@ stderr_path = "~/Library/Logs/mise-packages-upgrade.log"
 "brew:autossh" = "latest"
 # Official Amazon AWS command-line interface
 "brew:awscli" = "latest"
-# Microsoft Azure CLI 2.0
-"brew:azure-cli" = "latest"
 # Clone of cat(1) with syntax highlighting and Git integration
 "brew:bat" = "latest"
 # High performance key/value database
