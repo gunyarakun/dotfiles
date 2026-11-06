@@ -15,15 +15,16 @@ esac
 """
 post-packages = "brew services list | grep -q '^ollama .*started' || brew services start ollama"
 
-# Upgrade formulae every morning (replaces `brew autoupdate`), restarting
-# ollama when it was upgraded. Casks are left out: some need sudo, which has no
-# terminal here, and most update themselves.
+# Upgrade formulae and mise python's default packages every morning (replaces
+# `brew autoupdate`), restarting ollama when it was upgraded. Casks are left out:
+# some need sudo, which has no terminal here, and most update themselves.
 [bootstrap.macos.launchd.agents.mise-packages-upgrade]
 program = "/bin/sh"
 args = ["-c", """
 before=$(brew list --versions ollama)
 ~/.local/bin/mise -C '{{ config_root }}' bootstrap packages upgrade --manager brew --yes
 [ "$(brew list --versions ollama)" = "$before" ] || brew services restart ollama
+~/.local/bin/mise exec -- python -m pip install -q -U -r ~/.default-python-packages
 """]
 start_calendar_interval = [{ hour = 9, minute = 0 }]
 environment = { PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin" }
@@ -75,7 +76,7 @@ stderr_path = "~/Library/Logs/mise-packages-upgrade.log"
 "brew:aicommits" = "latest"
 # Automatically restart SSH sessions and tunnels
 "brew:autossh" = "latest"
-# Official Amazon AWS command-line interface
+# Official Amazon AWS command-line interface (v2 is not on PyPI, so not in mise/default-python-packages)
 "brew:awscli" = "latest"
 # Clone of cat(1) with syntax highlighting and Git integration
 "brew:bat" = "latest"
@@ -105,8 +106,6 @@ stderr_path = "~/Library/Logs/mise-packages-upgrade.log"
 "brew:diskonaut" = "latest"
 # Tool for exploring each layer in a docker image
 "brew:dive" = "latest"
-# Text processing system for reStructuredText
-"brew:docutils" = "latest"
 # SOCKS client wrapper for *BSD/macOS
 "brew:dsocks" = "latest"
 # More intuitive version of du in rust
@@ -121,8 +120,6 @@ stderr_path = "~/Library/Logs/mise-packages-upgrade.log"
 "brew:fdupes" = "latest"
 # Play, record, convert, and stream audio and video
 "brew:ffmpeg" = "latest"
-# Command-line downloader for image-hosting site galleries and collections
-"brew:gallery-dl" = "latest"
 # GitHub command-line tool
 "brew:gh" = "latest"
 # Distributed revision control system
@@ -181,8 +178,6 @@ stderr_path = "~/Library/Logs/mise-packages-upgrade.log"
 "brew:pdfcpu" = "latest"
 # PDF rendering library (based on the xpdf-3.0 code base)
 "brew:poppler" = "latest"
-# Framework for managing multi-language pre-commit hooks
-"brew:pre-commit" = "latest"
 # Modern replacement for ps written in Rust
 "brew:procs" = "latest"
 # Parallel versions of OpenSSH and related tools
@@ -223,8 +218,6 @@ stderr_path = "~/Library/Logs/mise-packages-upgrade.log"
 "brew:xan" = "latest"
 # Friendly and fast tool for sending HTTP requests
 "brew:xh" = "latest"
-# Feature-rich command-line audio/video downloader
-"brew:yt-dlp" = "latest"
 # UNIX shell (command interpreter)
 "brew:zsh" = "latest"
 "mas:1380563956" = "latest" # 辞書 by 物書堂

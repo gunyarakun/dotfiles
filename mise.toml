@@ -4,6 +4,8 @@
 [dotfiles]
 # mise
 "~/.config/mise/config.toml" = "mise/config.toml"
+# pip packages for mise python (installed on each python install)
+"~/.default-python-packages" = "mise/default-python-packages"
 # bin
 "~/bin" = { source = "bin", mode = "symlink-each" }
 # zsh
@@ -72,6 +74,8 @@ run = [
   done
   find ~/.claude/skills -maxdepth 1 -type l -lname '{{ config_root }}/agents/skills/*' ! -exec test -e {} \\; -print -delete
   """,
+  # default packages are only installed with a new python; install and upgrade them here too
+  "mise exec -- python -m pip install -q -U -r ~/.default-python-packages",
   # mise exec reads the global config linked in this run and installs missing tools
   "mise exec -- herdr plugin list | grep -qi annotate || mise exec -- herdr plugin install plannotator/herdr-annotate --yes",
   "mise exec -- pi list | grep -q '@ollama/pi-web-search' || mise exec -- pi install npm:@ollama/pi-web-search",

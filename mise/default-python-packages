@@ -1,0 +1,4 @@
+docutils
+gallery-dl
+pre-commit
+yt-dlp[default]

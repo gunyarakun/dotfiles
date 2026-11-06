@@ -1,10 +1,13 @@
 # Global mise config, deployed to ~/.config/mise/config.toml by mise.toml
 [tools]
 bun = "latest"
+# JS runtime for yt-dlp (YouTube)
+deno = "latest"
 ghq = "latest"
 go = "latest"
 herdr = "latest"
 node = "lts"
+"npm:@pfnet-research/pfpdf" = { version = "latest", allow_low_downloads = true }
 opencode = "latest"
 peco = "latest"
 pi = "latest"
